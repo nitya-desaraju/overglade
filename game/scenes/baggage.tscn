@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b4totmfguulmf"]
+[gd_scene load_steps=18 format=3 uid="uid://b4totmfguulmf"]
 
 [ext_resource type="Script" uid="uid://dljwicw6fwsct" path="res://scenes/baggage.gd" id="1_xim4f"]
 [ext_resource type="Texture2D" uid="uid://53urjslnccgi" path="res://assets/clock/clock_hand12.png" id="2_1d7r8"]
@@ -13,8 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://ke0w3d0b1rhw" path="res://assets/clock/clock_hand9.png" id="11_5d583"]
 [ext_resource type="Texture2D" uid="uid://ce8bves4rrf4n" path="res://assets/clock/clock_hand10.png" id="12_pdbry"]
 [ext_resource type="Texture2D" uid="uid://ce08agvsxol0h" path="res://assets/clock/clock_hand11.png" id="13_johpt"]
+[ext_resource type="Texture2D" uid="uid://cqdwqsn02mub0" path="res://assets/scanner.png" id="14_sl5mf"]
 [ext_resource type="Texture2D" uid="uid://dj4sfn2erodis" path="res://assets/clock/clock.png" id="14_v27hl"]
 [ext_resource type="Texture2D" uid="uid://chltg7tr70skx" path="res://assets/table.png" id="15_1d7r8"]
+[ext_resource type="Theme" uid="uid://daxi17ckej5hs" path="res://main.tres" id="15_jn1n6"]
 
 [node name="baggage" type="Node2D"]
 script = ExtResource("1_xim4f")
@@ -30,12 +32,23 @@ offset_bottom = 576.0
 
 [node name="scanner" type="TextureRect" parent="."]
 offset_right = 1024.0
-offset_bottom = 576.0
+offset_bottom = 192.0
+texture = ExtResource("14_sl5mf")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="liquid" type="RichTextLabel" parent="scanner"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 360.0
+offset_top = 56.0
+offset_right = 524.0
+offset_bottom = 132.0
+theme = ExtResource("15_jn1n6")
+theme_override_font_sizes/normal_font_size = 50
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="human" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -68,10 +81,10 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="rulebook" type="TextureButton" parent="."]
-offset_left = 304.0
-offset_top = 66.0
-offset_right = 464.0
-offset_bottom = 215.0
+offset_left = 282.0
+offset_top = 146.0
+offset_right = 442.0
+offset_bottom = 295.0
 ignore_texture_size = true
 stretch_mode = 5
 

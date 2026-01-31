@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d03hqljgnmu3m"]
+[gd_scene load_steps=18 format=3 uid="uid://d03hqljgnmu3m"]
 
 [ext_resource type="Script" uid="uid://dg3svefvmjyls" path="res://scenes/boardingpass.gd" id="1_yqv01"]
 [ext_resource type="Texture2D" uid="uid://53urjslnccgi" path="res://assets/clock/clock_hand12.png" id="2_q54tc"]
@@ -13,8 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://ke0w3d0b1rhw" path="res://assets/clock/clock_hand9.png" id="11_56q75"]
 [ext_resource type="Texture2D" uid="uid://ce8bves4rrf4n" path="res://assets/clock/clock_hand10.png" id="12_iywhv"]
 [ext_resource type="Texture2D" uid="uid://ce08agvsxol0h" path="res://assets/clock/clock_hand11.png" id="13_wlelf"]
+[ext_resource type="Texture2D" uid="uid://cqdwqsn02mub0" path="res://assets/scanner.png" id="14_6oyea"]
 [ext_resource type="Texture2D" uid="uid://dj4sfn2erodis" path="res://assets/clock/clock.png" id="14_oycsi"]
 [ext_resource type="Texture2D" uid="uid://chltg7tr70skx" path="res://assets/table.png" id="15_q54tc"]
+[ext_resource type="Theme" uid="uid://daxi17ckej5hs" path="res://main.tres" id="15_vwnb8"]
 
 [node name="boardingpass" type="Node2D"]
 script = ExtResource("1_yqv01")
@@ -30,12 +32,21 @@ offset_bottom = 576.0
 
 [node name="scanner" type="TextureRect" parent="."]
 offset_right = 1024.0
-offset_bottom = 576.0
+offset_bottom = 192.0
+texture = ExtResource("14_6oyea")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="liquid" type="RichTextLabel" parent="scanner"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 360.0
+offset_top = 56.0
+offset_right = 524.0
+offset_bottom = 132.0
+theme = ExtResource("15_vwnb8")
+theme_override_font_sizes/normal_font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="human" type="TextureRect" parent="."]
 offset_right = 40.0
