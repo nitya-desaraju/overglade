@@ -6,6 +6,7 @@ extends Node2D
 @onready var overlay = $overlay
 @export var clock_hands: Array[Texture2D] = [] 
 @export var char_textures: Array[Texture2D] = []
+@export var suitcases: Array[Texture2D] = []
 @onready var human = $human
 @onready var passport = $passport
 @onready var passport_popup = $overlay/passportPopup
@@ -41,8 +42,9 @@ func _ready():
 	passport.pressed.connect(_on_passport_pressed)
 	$action/heaven.pressed.connect(func(): _process_decision(true))
 	$action/hell.pressed.connect(func(): _process_decision(false))
-	$overlay/endPopup/next.pressed.connect(_on_next_day_pressed)
+	next.pressed.connect(_on_next_day_pressed)
 	
+	baggage.texture = suitcases[randi_range(0,4)]
 	spawn_new_character()
 	run_timer()
 	
@@ -72,13 +74,13 @@ func spawn_new_character():
 	generate_precheck_data()
 	human.position = Vector2(-300, 300)
 	passport.position = Vector2(-200, 500)
-	baggage.position = Vector2(-300, 100)
+	baggage.position = Vector2(-200, 67)
 	
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property(human, "position", Vector2(400, 300), 1.0).set_trans(Tween.TRANS_QUINT)
 	tween.tween_property(passport, "position", Vector2(400, 500), 1.0).set_trans(Tween.TRANS_QUINT)
 	tween.tween_property(boardingpass, "position", Vector2(400, 550), 1.0).set_trans(Tween.TRANS_QUINT)
-	tween.tween_property(baggage, "position", Vector2(400, 100), 1.0).set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(baggage, "position", Vector2(600, 67), 5.0).set_trans(Tween.TRANS_QUAD)
 	
 func generate_passport_data():
 	good.text = ""

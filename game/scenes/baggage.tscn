@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b4totmfguulmf"]
+[gd_scene load_steps=23 format=3 uid="uid://b4totmfguulmf"]
 
 [ext_resource type="Script" uid="uid://dljwicw6fwsct" path="res://scenes/baggage.gd" id="1_xim4f"]
 [ext_resource type="Texture2D" uid="uid://53urjslnccgi" path="res://assets/clock/clock_hand12.png" id="2_1d7r8"]
@@ -13,22 +13,33 @@
 [ext_resource type="Texture2D" uid="uid://ke0w3d0b1rhw" path="res://assets/clock/clock_hand9.png" id="11_5d583"]
 [ext_resource type="Texture2D" uid="uid://ce8bves4rrf4n" path="res://assets/clock/clock_hand10.png" id="12_pdbry"]
 [ext_resource type="Texture2D" uid="uid://ce08agvsxol0h" path="res://assets/clock/clock_hand11.png" id="13_johpt"]
+[ext_resource type="Texture2D" uid="uid://w4ws87wl38a3" path="res://assets/suitcase1.png" id="14_j2xes"]
 [ext_resource type="Texture2D" uid="uid://cqdwqsn02mub0" path="res://assets/scanner.png" id="14_sl5mf"]
 [ext_resource type="Texture2D" uid="uid://dj4sfn2erodis" path="res://assets/clock/clock.png" id="14_v27hl"]
 [ext_resource type="Texture2D" uid="uid://chltg7tr70skx" path="res://assets/table.png" id="15_1d7r8"]
+[ext_resource type="Texture2D" uid="uid://u877kmcn4h5s" path="res://assets/suitcase2.png" id="15_5d583"]
 [ext_resource type="Theme" uid="uid://daxi17ckej5hs" path="res://main.tres" id="15_jn1n6"]
+[ext_resource type="Texture2D" uid="uid://bh576rhh4v6lj" path="res://assets/suitcase3.png" id="16_pdbry"]
+[ext_resource type="Texture2D" uid="uid://c6hvyhlfut8a7" path="res://assets/suitcase4.png" id="17_johpt"]
+[ext_resource type="Texture2D" uid="uid://b5la4odds8bui" path="res://assets/suitcase5.png" id="18_l7qmj"]
 
 [node name="baggage" type="Node2D"]
 script = ExtResource("1_xim4f")
 clock_hands = Array[Texture2D]([ExtResource("2_1d7r8"), ExtResource("3_1d7r8"), ExtResource("4_ygri5"), ExtResource("5_sl5mf"), ExtResource("6_jn1n6"), ExtResource("7_8olss"), ExtResource("8_o86gp"), ExtResource("9_sw25v"), ExtResource("10_j2xes"), ExtResource("11_5d583"), ExtResource("12_pdbry"), ExtResource("13_johpt")])
+suitcases = Array[Texture2D]([ExtResource("14_j2xes"), ExtResource("15_5d583"), ExtResource("16_pdbry"), ExtResource("17_johpt"), ExtResource("18_l7qmj")])
 
 [node name="background" type="TextureRect" parent="."]
 offset_right = 1024.0
 offset_bottom = 576.0
 
 [node name="baggage" type="TextureRect" parent="."]
-offset_right = 1024.0
-offset_bottom = 576.0
+offset_left = -190.0
+offset_top = 67.0
+offset_right = -1.0
+offset_bottom = 160.0
+texture = ExtResource("14_j2xes")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="scanner" type="TextureRect" parent="."]
 offset_right = 1024.0
