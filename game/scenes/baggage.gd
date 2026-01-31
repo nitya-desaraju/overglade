@@ -22,12 +22,14 @@ extends Node2D
 @onready var next = $overlay/endPopup/next
 @onready var baggage = $baggage
 @onready var scanner = $scanner
+@onready var liquid = $scanner/liquid
 
 var scene_correct: int = 0
 var scene_incorrect: int = 0
 var current_good_count: int = 0
 var current_bad_count: int = 0
 var is_day_over: bool = false
+var liquid_amt: float = 0.0
 
 var good_deeds = ["- Saved a kitten", "- Donated blood", "- Recycled", "- Honest person", "- Kind to elders"]
 var bad_deeds = ["- Littered", "- Stole", "- Double parked", "- Lied to parents", "- Cut in line"]
@@ -66,6 +68,7 @@ func spawn_new_character():
 	if is_day_over: return
 	human.texture = char_textures.pick_random()
 	generate_passport_data()
+	generate_liquid_data()
 	human.position = Vector2(-300, 300)
 	passport.position = Vector2(-200, 500)
 	baggage.position = Vector2(-300, 100)
@@ -94,10 +97,18 @@ func generate_passport_data():
 	for i in range(current_bad_count):
 		bad.text += "- " + bads[i] + "\n"
 		
+func generate_liquid_data():
+	liquid_amt = randf_range(0.0,5.0)
+	if baggage.position.x == 400:
+		liquid.text = liquid_amt + " oz"
+		
 func _process_decision(sent_to_heaven: bool):
 	if is_day_over: return
 	
 	var is_actually_good = current_good_count > current_bad_count
+	if is_actually_good and liquid_amt > 3.4:
+		is_actually_good = false
+		
 	if (sent_to_heaven == is_actually_good):
 		scene_correct += 1
 		global.total_correct += 1
@@ -145,7 +156,7 @@ func _on_next_day_pressed():
 	var total = float(scene_correct + scene_incorrect)
 	var percent = (scene_correct / total * 100.0) if total > 0 else 0.0
 	
-	if percent >= 50.0:
-		get_tree().change_scene_to_file("res://baggage.tscn")
+	if percent >= 75.0:
+		get_tree().change_scene_to_file("res://precheck.tscn")
 	else:
 		get_tree().reload_current_scene()
