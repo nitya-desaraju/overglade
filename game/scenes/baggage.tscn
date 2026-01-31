@@ -1,24 +1,23 @@
 [gd_scene load_steps=15 format=3 uid="uid://b4totmfguulmf"]
 
-[ext_resource type="Script" uid="uid://rlhw5jwmqbyc" path="res://scenes/passport.gd" id="1_ia2vn"]
+[ext_resource type="Script" uid="uid://dljwicw6fwsct" path="res://scenes/baggage.gd" id="1_xim4f"]
 [ext_resource type="Texture2D" uid="uid://53urjslnccgi" path="res://assets/clock/clock_hand12.png" id="2_1d7r8"]
-[ext_resource type="Texture2D" uid="uid://df50jtdwnq5cw" path="res://assets/clock/clock_hand1.png" id="3_ygri5"]
-[ext_resource type="Texture2D" uid="uid://bocs85ie88jlp" path="res://assets/clock/clock_hand2.png" id="4_sl5mf"]
-[ext_resource type="Texture2D" uid="uid://c1ljd8kk2wqwk" path="res://assets/clock/clock_hand3.png" id="5_jn1n6"]
-[ext_resource type="Texture2D" uid="uid://b11hsccx8gmuf" path="res://assets/clock/clock_hand4.png" id="6_8olss"]
-[ext_resource type="Texture2D" uid="uid://clygfu771rj6u" path="res://assets/clock/clock_hand5.png" id="7_o86gp"]
-[ext_resource type="Texture2D" uid="uid://cao8vke1rxl64" path="res://assets/clock/clock_hand6.png" id="8_sw25v"]
-[ext_resource type="Texture2D" uid="uid://cpm0pmqbuw67l" path="res://assets/clock/clock_hand7.png" id="9_j2xes"]
-[ext_resource type="Texture2D" uid="uid://c4f746rwtiygv" path="res://assets/clock/clock_hand8.png" id="10_5d583"]
-[ext_resource type="Texture2D" uid="uid://ke0w3d0b1rhw" path="res://assets/clock/clock_hand9.png" id="11_pdbry"]
-[ext_resource type="Texture2D" uid="uid://ce8bves4rrf4n" path="res://assets/clock/clock_hand10.png" id="12_johpt"]
-[ext_resource type="Texture2D" uid="uid://ce08agvsxol0h" path="res://assets/clock/clock_hand11.png" id="13_l7qmj"]
+[ext_resource type="Texture2D" uid="uid://df50jtdwnq5cw" path="res://assets/clock/clock_hand1.png" id="3_1d7r8"]
+[ext_resource type="Texture2D" uid="uid://bocs85ie88jlp" path="res://assets/clock/clock_hand2.png" id="4_ygri5"]
+[ext_resource type="Texture2D" uid="uid://c1ljd8kk2wqwk" path="res://assets/clock/clock_hand3.png" id="5_sl5mf"]
+[ext_resource type="Texture2D" uid="uid://b11hsccx8gmuf" path="res://assets/clock/clock_hand4.png" id="6_jn1n6"]
+[ext_resource type="Texture2D" uid="uid://clygfu771rj6u" path="res://assets/clock/clock_hand5.png" id="7_8olss"]
+[ext_resource type="Texture2D" uid="uid://cao8vke1rxl64" path="res://assets/clock/clock_hand6.png" id="8_o86gp"]
+[ext_resource type="Texture2D" uid="uid://cpm0pmqbuw67l" path="res://assets/clock/clock_hand7.png" id="9_sw25v"]
+[ext_resource type="Texture2D" uid="uid://c4f746rwtiygv" path="res://assets/clock/clock_hand8.png" id="10_j2xes"]
+[ext_resource type="Texture2D" uid="uid://ke0w3d0b1rhw" path="res://assets/clock/clock_hand9.png" id="11_5d583"]
+[ext_resource type="Texture2D" uid="uid://ce8bves4rrf4n" path="res://assets/clock/clock_hand10.png" id="12_pdbry"]
+[ext_resource type="Texture2D" uid="uid://ce08agvsxol0h" path="res://assets/clock/clock_hand11.png" id="13_johpt"]
 [ext_resource type="Texture2D" uid="uid://dj4sfn2erodis" path="res://assets/clock/clock.png" id="14_v27hl"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_ia2vn")
-clock_hands = Array[Texture2D]([ExtResource("2_1d7r8"), ExtResource("3_ygri5"), ExtResource("4_sl5mf"), ExtResource("5_jn1n6"), ExtResource("6_8olss"), ExtResource("7_o86gp"), ExtResource("8_sw25v"), ExtResource("9_j2xes"), ExtResource("10_5d583"), ExtResource("11_pdbry"), ExtResource("12_johpt"), ExtResource("13_l7qmj"), ExtResource("2_1d7r8")])
-char_textures = null
+script = ExtResource("1_xim4f")
+clock_hands = Array[Texture2D]([ExtResource("2_1d7r8"), ExtResource("3_1d7r8"), ExtResource("4_ygri5"), ExtResource("5_sl5mf"), ExtResource("6_jn1n6"), ExtResource("7_8olss"), ExtResource("8_o86gp"), ExtResource("9_sw25v"), ExtResource("10_j2xes"), ExtResource("11_5d583"), ExtResource("12_pdbry"), ExtResource("13_johpt")])
 
 [node name="background" type="TextureRect" parent="."]
 offset_right = 1024.0

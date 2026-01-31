@@ -101,11 +101,11 @@ func _process_decision(sent_to_heaven: bool):
 	if (sent_to_heaven == is_actually_good):
 		scene_correct += 1
 		global.total_correct += 1
-		effects.texture = light_tex
+		#effects.texture = light_tex
 	else:
 		scene_incorrect += 1
 		global.total_incorrect += 1
-		effects.texture = fire_tex
+		#effects.texture = fire_tex
 	
 	var tween = create_tween()
 	tween.tween_property(human, "position:x", 1200, 0.8)
