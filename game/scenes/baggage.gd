@@ -100,7 +100,7 @@ func generate_passport_data():
 func generate_liquid_data():
 	liquid_amt = randf_range(0.0,5.0)
 	if baggage.position.x == 400:
-		liquid.text = liquid_amt + " oz"
+		liquid.text = str(liquid_amt) + " oz"
 		
 func _process_decision(sent_to_heaven: bool):
 	if is_day_over: return
