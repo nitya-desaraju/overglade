@@ -1,0 +1,154 @@
+[gd_scene load_steps=15 format=3 uid="uid://d03hqljgnmu3m"]
+
+[ext_resource type="Script" uid="uid://dg3svefvmjyls" path="res://scenes/boardingpass.gd" id="1_yqv01"]
+[ext_resource type="Texture2D" uid="uid://53urjslnccgi" path="res://assets/clock/clock_hand12.png" id="2_q54tc"]
+[ext_resource type="Texture2D" uid="uid://df50jtdwnq5cw" path="res://assets/clock/clock_hand1.png" id="3_q54tc"]
+[ext_resource type="Texture2D" uid="uid://bocs85ie88jlp" path="res://assets/clock/clock_hand2.png" id="4_6sm4p"]
+[ext_resource type="Texture2D" uid="uid://c1ljd8kk2wqwk" path="res://assets/clock/clock_hand3.png" id="5_6oyea"]
+[ext_resource type="Texture2D" uid="uid://b11hsccx8gmuf" path="res://assets/clock/clock_hand4.png" id="6_vwnb8"]
+[ext_resource type="Texture2D" uid="uid://clygfu771rj6u" path="res://assets/clock/clock_hand5.png" id="7_oaegj"]
+[ext_resource type="Texture2D" uid="uid://cao8vke1rxl64" path="res://assets/clock/clock_hand6.png" id="8_m1tug"]
+[ext_resource type="Texture2D" uid="uid://cpm0pmqbuw67l" path="res://assets/clock/clock_hand7.png" id="9_xgqn8"]
+[ext_resource type="Texture2D" uid="uid://c4f746rwtiygv" path="res://assets/clock/clock_hand8.png" id="10_oq1vo"]
+[ext_resource type="Texture2D" uid="uid://ke0w3d0b1rhw" path="res://assets/clock/clock_hand9.png" id="11_56q75"]
+[ext_resource type="Texture2D" uid="uid://ce8bves4rrf4n" path="res://assets/clock/clock_hand10.png" id="12_iywhv"]
+[ext_resource type="Texture2D" uid="uid://ce08agvsxol0h" path="res://assets/clock/clock_hand11.png" id="13_wlelf"]
+[ext_resource type="Texture2D" uid="uid://dj4sfn2erodis" path="res://assets/clock/clock.png" id="14_oycsi"]
+
+[node name="boardingpass" type="Node2D"]
+script = ExtResource("1_yqv01")
+clock_hands = Array[Texture2D]([ExtResource("2_q54tc"), ExtResource("3_q54tc"), ExtResource("4_6sm4p"), ExtResource("5_6oyea"), ExtResource("6_vwnb8"), ExtResource("7_oaegj"), ExtResource("8_m1tug"), ExtResource("9_xgqn8"), ExtResource("10_oq1vo"), ExtResource("11_56q75"), ExtResource("12_iywhv"), ExtResource("13_wlelf")])
+
+[node name="background" type="TextureRect" parent="."]
+offset_right = 1024.0
+offset_bottom = 576.0
+
+[node name="baggage" type="TextureRect" parent="."]
+offset_right = 1024.0
+offset_bottom = 576.0
+
+[node name="scanner" type="TextureRect" parent="."]
+offset_right = 1024.0
+offset_bottom = 576.0
+
+[node name="liquid" type="RichTextLabel" parent="scanner"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="human" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="metalDetector" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="passport" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="boardingpass" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="clock" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("14_oycsi")
+
+[node name="clockHand" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_q54tc")
+
+[node name="table" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="rulebook" type="TextureButton" parent="."]
+offset_left = 304.0
+offset_top = 66.0
+offset_right = 464.0
+offset_bottom = 215.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="overlay" type="ColorRect" parent="."]
+visible = false
+offset_left = 434.0
+offset_top = 156.0
+offset_right = 474.0
+offset_bottom = 196.0
+color = Color(0.1254902, 0.1254902, 0.1254902, 0.70980394)
+
+[node name="passportPopup" type="TextureRect" parent="overlay"]
+layout_mode = 0
+offset_left = -77.0
+offset_top = -72.0
+offset_right = -37.0
+offset_bottom = -32.0
+
+[node name="good" type="RichTextLabel" parent="overlay/passportPopup"]
+layout_mode = 0
+offset_top = 146.0
+offset_right = 40.0
+offset_bottom = 186.0
+
+[node name="bad" type="RichTextLabel" parent="overlay/passportPopup"]
+layout_mode = 0
+offset_top = 146.0
+offset_right = 40.0
+offset_bottom = 186.0
+
+[node name="rulebookPopup" type="TextureRect" parent="overlay"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 5.0
+offset_right = 146.0
+offset_bottom = 45.0
+
+[node name="rules" type="RichTextLabel" parent="overlay/rulebookPopup"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="endPopup" type="TextureRect" parent="overlay"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="rightScore" type="RichTextLabel" parent="overlay/endPopup"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="wrongScore" type="RichTextLabel" parent="overlay/endPopup"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="accuracy" type="RichTextLabel" parent="overlay/endPopup"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="next" type="TextureButton" parent="overlay/endPopup"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="action" type="HBoxContainer" parent="."]
+offset_left = 775.0
+offset_top = 3.0
+offset_right = 1018.0
+offset_bottom = 239.0
+
+[node name="heaven" type="TextureButton" parent="action"]
+layout_mode = 2
+
+[node name="hell" type="TextureButton" parent="action"]
+layout_mode = 2
+
+[node name="effects" type="AnimatedSprite2D" parent="."]
+visible = false
