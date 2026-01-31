@@ -1,8 +1,6 @@
 extends Node2D
 
 @onready var rulebook = $rulebook
-@onready var popup = $popup
-@onready var close = $popup/close
 @onready var timer = $clock
 @onready var clock_hand = $clockHand
 @onready var overlay = $overlay
