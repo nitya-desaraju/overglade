@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4totmfguulmf"]
+[gd_scene load_steps=16 format=3 uid="uid://b4totmfguulmf"]
 
 [ext_resource type="Script" uid="uid://dljwicw6fwsct" path="res://scenes/baggage.gd" id="1_xim4f"]
 [ext_resource type="Texture2D" uid="uid://53urjslnccgi" path="res://assets/clock/clock_hand12.png" id="2_1d7r8"]
@@ -14,8 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://ce8bves4rrf4n" path="res://assets/clock/clock_hand10.png" id="12_pdbry"]
 [ext_resource type="Texture2D" uid="uid://ce08agvsxol0h" path="res://assets/clock/clock_hand11.png" id="13_johpt"]
 [ext_resource type="Texture2D" uid="uid://dj4sfn2erodis" path="res://assets/clock/clock.png" id="14_v27hl"]
+[ext_resource type="Texture2D" uid="uid://chltg7tr70skx" path="res://assets/table.png" id="15_1d7r8"]
 
-[node name="Node2D" type="Node2D"]
+[node name="baggage" type="Node2D"]
 script = ExtResource("1_xim4f")
 clock_hands = Array[Texture2D]([ExtResource("2_1d7r8"), ExtResource("3_1d7r8"), ExtResource("4_ygri5"), ExtResource("5_sl5mf"), ExtResource("6_jn1n6"), ExtResource("7_8olss"), ExtResource("8_o86gp"), ExtResource("9_sw25v"), ExtResource("10_j2xes"), ExtResource("11_5d583"), ExtResource("12_pdbry"), ExtResource("13_johpt")])
 
@@ -59,8 +60,12 @@ offset_bottom = 40.0
 texture = ExtResource("2_1d7r8")
 
 [node name="table" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = 380.0
+offset_right = 1024.0
+offset_bottom = 576.0
+texture = ExtResource("15_1d7r8")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="rulebook" type="TextureButton" parent="."]
 offset_left = 304.0
