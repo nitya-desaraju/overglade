@@ -32,11 +32,6 @@ offset_bottom = 576.0
 offset_right = 1024.0
 offset_bottom = 576.0
 
-[node name="liquid" type="RichTextLabel" parent="scanner"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="human" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
