@@ -22,6 +22,7 @@ extends Node2D
 @onready var baggage = $baggage
 @onready var scanner = $scanner
 @onready var liquid = $scanner/liquid
+@onready var close = $overlay/close
 
 var scene_correct: int = 0
 var scene_incorrect: int = 0
@@ -41,6 +42,7 @@ func _ready():
 	$action/heaven.pressed.connect(func(): _process_decision(true))
 	$action/hell.pressed.connect(func(): _process_decision(false))
 	next.pressed.connect(_on_next_day_pressed)
+	close.pressed.connect(_on_background_clicked)
 	
 	baggage.texture = suitcases[randi_range(0,4)]
 	spawn_new_character()
@@ -58,6 +60,10 @@ func _on_passport_pressed():
 func _on_rulebook_pressed():
 	overlay.show()
 	rulebook_popup.show()
+	
+func _on_background_clicked():
+	if not end_popup.visible:
+		close_all_popups()
 	
 func close_all_popups():
 	overlay.hide()

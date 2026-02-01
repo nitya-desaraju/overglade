@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b4totmfguulmf"]
+[gd_scene load_steps=30 format=3 uid="uid://b4totmfguulmf"]
 
 [ext_resource type="Script" uid="uid://dljwicw6fwsct" path="res://scenes/baggage.gd" id="1_xim4f"]
 [ext_resource type="Texture2D" uid="uid://53urjslnccgi" path="res://assets/clock/clock_hand12.png" id="2_1d7r8"]
@@ -27,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://ciej4t2yu5j8m" path="res://assets/passport.png" id="24_v27hl"]
 [ext_resource type="Texture2D" uid="uid://c1ytrewiygdkp" path="res://assets/passport_hover.png" id="25_m4q7d"]
 [ext_resource type="Texture2D" uid="uid://cbca36c482tkt" path="res://assets/rulebook_hover.png" id="25_v27hl"]
+[ext_resource type="Texture2D" uid="uid://tr1iir4pe37l" path="res://assets/passportPopup.png" id="28_m4q7d"]
+[ext_resource type="Texture2D" uid="uid://cp5nktn8gfy4a" path="res://assets/rulebookpopup.png" id="29_46g6y"]
 
 [node name="baggage" type="Node2D"]
 script = ExtResource("1_xim4f")
@@ -100,10 +102,10 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="passport" type="TextureButton" parent="."]
-offset_left = 142.0
-offset_top = 586.0
-offset_right = 192.0
-offset_bottom = 653.0
+offset_left = -60.0
+offset_top = 450.0
+offset_right = -10.0
+offset_bottom = 517.0
 texture_normal = ExtResource("24_v27hl")
 texture_hover = ExtResource("25_m4q7d")
 ignore_texture_size = true
@@ -127,38 +129,146 @@ offset_right = 474.0
 offset_bottom = 196.0
 color = Color(0.1254902, 0.1254902, 0.1254902, 0.70980394)
 
-[node name="passportPopup" type="TextureRect" parent="overlay"]
+[node name="close" type="TextureButton" parent="overlay"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = -77.0
-offset_top = -72.0
-offset_right = -37.0
-offset_bottom = -32.0
+offset_right = 1024.0
+offset_bottom = 576.0
+
+[node name="passportPopup" type="TextureRect" parent="overlay"]
+visible = false
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 576.0
+texture = ExtResource("28_m4q7d")
 
 [node name="good" type="RichTextLabel" parent="overlay/passportPopup"]
 layout_mode = 0
-offset_top = 146.0
-offset_right = 40.0
-offset_bottom = 186.0
+offset_left = 158.0
+offset_top = 230.0
+offset_right = 490.0
+offset_bottom = 486.0
+theme_override_colors/default_color = Color(0, 0.32941177, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "- sgfjlfgkdslf
+-wgjjlghsl
+--sbnlnfnbjkjn
+-vnjbnvks
+-bvnfjk;bn"
 
 [node name="bad" type="RichTextLabel" parent="overlay/passportPopup"]
 layout_mode = 0
-offset_top = 146.0
-offset_right = 40.0
-offset_bottom = 186.0
+offset_left = 537.0
+offset_top = 230.0
+offset_right = 869.0
+offset_bottom = 486.0
+theme_override_colors/default_color = Color(0.65882355, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "- sgfjlfgkdslf
+-wgjjlghsl
+--sbnlnfnbjkjn
+-vnjbnvks
+-bvnfjk;bn"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="overlay/passportPopup"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 90.0
+offset_right = 536.0
+offset_bottom = 181.0
+mouse_filter = 1
+theme = ExtResource("15_jn1n6")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "PASSPORT"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="overlay/passportPopup"]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 90.0
+offset_right = 920.0
+offset_bottom = 181.0
+mouse_filter = 1
+theme = ExtResource("15_jn1n6")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "PASSPORT"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="overlay/passportPopup"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 170.0
+offset_right = 404.0
+offset_bottom = 257.0
+mouse_filter = 1
+theme = ExtResource("15_jn1n6")
+theme_override_colors/default_color = Color(6.9789587e-07, 0.32750946, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "Merits"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="overlay/passportPopup"]
+layout_mode = 0
+offset_left = 658.0
+offset_top = 170.0
+offset_right = 806.0
+offset_bottom = 257.0
+mouse_filter = 1
+theme = ExtResource("15_jn1n6")
+theme_override_colors/default_color = Color(0.65891117, 1.9131974e-06, 5.2943824e-07, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "Sins"
 
 [node name="rulebookPopup" type="TextureRect" parent="overlay"]
+visible = false
 layout_mode = 0
-offset_left = 106.0
-offset_top = 5.0
-offset_right = 146.0
-offset_bottom = 45.0
+offset_right = 1024.0
+offset_bottom = 576.0
+texture = ExtResource("29_46g6y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="overlay/rulebookPopup"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 90.0
+offset_right = 532.0
+offset_bottom = 181.0
+mouse_filter = 1
+theme = ExtResource("15_jn1n6")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "RULEBOOK"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="overlay/rulebookPopup"]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 90.0
+offset_right = 908.0
+offset_bottom = 181.0
+mouse_filter = 1
+theme = ExtResource("15_jn1n6")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "RULEBOOK"
 
 [node name="rules" type="RichTextLabel" parent="overlay/rulebookPopup"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 167.0
+offset_top = 171.0
+offset_right = 480.0
+offset_bottom = 480.0
+theme = ExtResource("15_jn1n6")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Job: Grim Reaper's Assistant
+
+Use the soul's passport to determine whether they should be sent to heaven or hell. 
+
+- If they have more merits than sins, they go to heaven.
+- If they have more sins than merits, they go to sins."
 
 [node name="endPopup" type="TextureRect" parent="overlay"]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
