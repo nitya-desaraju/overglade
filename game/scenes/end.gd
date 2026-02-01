@@ -6,7 +6,7 @@ extends Node2D
 @onready var popup = $UI/popup
 @onready var overlay = $UI/overlay
 @onready var menu = $UI/popup/menu
-@onready var label = $UI/popup/RichTextLabel
+@onready var label = $UI/popup/menu/RichTextLabel
 @onready var right = $UI/popup/right
 @onready var wrong = $UI/popup/wrong
 @onready var accuracy = $UI/popup/accuracy
