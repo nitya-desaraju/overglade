@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://d03hqljgnmu3m"]
+[gd_scene load_steps=36 format=3 uid="uid://d03hqljgnmu3m"]
 
 [ext_resource type="Script" uid="uid://dg3svefvmjyls" path="res://scenes/boardingpass.gd" id="1_yqv01"]
 [ext_resource type="Texture2D" uid="uid://53urjslnccgi" path="res://assets/clock/clock_hand12.png" id="2_q54tc"]
@@ -31,7 +31,10 @@
 [ext_resource type="Texture2D" uid="uid://ulo52nuihhaf" path="res://assets/passportPopup_edit2.png" id="29_3l3r6"]
 [ext_resource type="Texture2D" uid="uid://cp5nktn8gfy4a" path="res://assets/rulebookpopup.png" id="29_ts1xl"]
 [ext_resource type="Texture2D" uid="uid://nx152mbsqmp" path="res://assets/hell.png" id="31_3l3r6"]
+[ext_resource type="Texture2D" uid="uid://b2ikv25el6dm7" path="res://assets/scorePopup.png" id="31_eydfh"]
 [ext_resource type="Texture2D" uid="uid://dudov70tkfnfy" path="res://assets/hellhover.png" id="32_fm4nh"]
+[ext_resource type="Texture2D" uid="uid://dah36my66cjwx" path="res://addons/next.png" id="32_xioav"]
+[ext_resource type="Texture2D" uid="uid://bgrj7jkuf7f1t" path="res://addons/nexthover.png" id="33_tpivw"]
 
 [node name="boardingpass" type="Node2D"]
 script = ExtResource("1_yqv01")
@@ -283,28 +286,124 @@ Use the soul's passport to determine whether they should be sent to heaven or he
 [node name="endPopup" type="TextureRect" parent="overlay"]
 visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1024.0
+offset_bottom = 576.0
+texture = ExtResource("31_eydfh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="overlay/endPopup"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 90.0
+offset_right = 498.0
+offset_bottom = 244.0
+theme = ExtResource("15_vwnb8")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 70
+text = "RESULTS"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="overlay/endPopup"]
+layout_mode = 0
+offset_left = 549.0
+offset_top = 90.0
+offset_right = 875.0
+offset_bottom = 245.0
+theme = ExtResource("15_vwnb8")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 70
+text = "RESULTS"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="overlay/endPopup"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 220.0
+offset_right = 496.0
+offset_bottom = 375.0
+theme = ExtResource("15_vwnb8")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "Right:"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="overlay/endPopup"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 350.0
+offset_right = 496.0
+offset_bottom = 505.0
+theme = ExtResource("15_vwnb8")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "Wrong:"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="overlay/endPopup"]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 199.0
+offset_right = 904.0
+offset_bottom = 354.0
+theme = ExtResource("15_vwnb8")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "Accuracy:"
 
 [node name="rightScore" type="RichTextLabel" parent="overlay/endPopup"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 400.0
+offset_top = 220.0
+offset_right = 598.0
+offset_bottom = 374.0
+theme = ExtResource("15_vwnb8")
+theme_override_colors/default_color = Color(0, 0.4509804, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "50"
 
 [node name="wrongScore" type="RichTextLabel" parent="overlay/endPopup"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 400.0
+offset_top = 350.0
+offset_right = 726.0
+offset_bottom = 505.0
+theme = ExtResource("15_vwnb8")
+theme_override_colors/default_color = Color(0.72156864, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "50"
 
 [node name="accuracy" type="RichTextLabel" parent="overlay/endPopup"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 590.0
+offset_top = 256.0
+offset_right = 805.0
+offset_bottom = 388.0
+theme = ExtResource("15_vwnb8")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "100%"
+horizontal_alignment = 1
+
+[node name="notif" type="RichTextLabel" parent="overlay/endPopup"]
+visible = false
+layout_mode = 0
+offset_left = 542.0
+offset_top = 385.0
+offset_right = 757.0
+offset_bottom = 517.0
+theme = ExtResource("15_vwnb8")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "Good job!"
+horizontal_alignment = 1
 
 [node name="next" type="TextureButton" parent="overlay/endPopup"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 753.0
+offset_top = 361.0
+offset_right = 846.0
+offset_bottom = 454.0
+texture_normal = ExtResource("32_xioav")
+texture_hover = ExtResource("33_tpivw")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="action" type="HBoxContainer" parent="."]
 offset_left = 1078.0

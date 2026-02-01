@@ -12,6 +12,7 @@ extends Node2D
 @onready var passport_popup = $overlay/passportPopup
 @onready var rulebook_popup = $overlay/rulebookPopup
 @onready var good = $overlay/passportPopup/good
+@onready var notif = $overlay/endPopup/notif
 @onready var bad = $overlay/passportPopup/bad
 @onready var effects = $effects
 @onready var end_popup = $overlay/endPopup
@@ -171,7 +172,10 @@ func show_end_day_summary():
 	end_popup.show()
 	
 	var total = float(scene_correct + scene_incorrect)
-	var percent = (scene_correct / total * 100.0) if total > 0 else 0.0
+	var percent = int(scene_correct / total * 100.0) if total > 0 else 0.0
+	
+	if (scene_correct / total * 100.0) if total > 0 else 0.0 >= 100.0 and scene_correct >= 8:
+		notif.show()
 	
 	right_score.text = "Correct: " + str(scene_correct)
 	wrong_score.text = "Incorrect: " + str(scene_incorrect)
@@ -181,7 +185,7 @@ func _on_next_day_pressed():
 	var total = float(scene_correct + scene_incorrect)
 	var percent = (scene_correct / total * 100.0) if total > 0 else 0.0
 	
-	if percent >= 100.0:
+	if percent >= 100.0 and scene_correct >= 8:
 		get_tree().change_scene_to_file("res://end.tscn")
 	else:
 		get_tree().reload_current_scene()

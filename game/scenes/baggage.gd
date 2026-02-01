@@ -23,6 +23,7 @@ extends Node2D
 @onready var scanner = $scanner
 @onready var liquid = $scanner/liquid
 @onready var close = $overlay/close
+@onready var notif = $overlay/endPopup/notif
 
 var scene_correct: int = 0
 var scene_incorrect: int = 0
@@ -155,7 +156,10 @@ func show_end_day_summary():
 	end_popup.show()
 	
 	var total = float(scene_correct + scene_incorrect)
-	var percent = (scene_correct / total * 100.0) if total > 0 else 0.0
+	var percent = int(scene_correct / total * 100.0) if total > 0 else 0.0
+	
+	if (scene_correct / total * 100.0) if total > 0 else 0.0 >= 75.0 and scene_correct >= 6:
+		notif.show()
 	
 	right_score.text = "Correct: " + str(scene_correct)
 	wrong_score.text = "Correct: " + str(scene_incorrect)
@@ -165,7 +169,7 @@ func _on_next_day_pressed():
 	var total = float(scene_correct + scene_incorrect)
 	var percent = (scene_correct / total * 100.0) if total > 0 else 0.0
 	
-	if percent >= 75.0:
+	if percent >= 75.0 and scene_correct >= 6:
 		get_tree().change_scene_to_file("res://boardingpass.tscn")
 	else:
 		get_tree().reload_current_scene()
