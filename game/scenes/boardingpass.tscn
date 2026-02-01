@@ -305,6 +305,19 @@ Use the soul's passport to determine whether they should be sent to heaven or he
 - If they have more merits than sins, they go to heaven.
 - If they have more sins than merits, they go to hell."
 
+[node name="rules2" type="RichTextLabel" parent="overlay/rulebookPopup"]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 226.0
+offset_right = 861.0
+offset_bottom = 462.0
+theme = ExtResource("15_vwnb8")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "If they have more than 3.4 oz of emotional baggage, then they must go to hell.
+
+If they have PreCheck, they have extraordinarily amazing merit that excuses all reasons for them to go to hell."
+
 [node name="endPopup" type="TextureRect" parent="overlay"]
 visible = false
 layout_mode = 0
