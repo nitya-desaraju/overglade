@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tr1iir4pe37l"
-path="res://.godot/imported/passportPopup.png-92f481233914a006d1adce14007d9f58.ctex"
+uid="uid://d184qxxh8klrm"
+path="res://.godot/imported/passportPopup_edit1.png-c786a85cea11a8c03f0af03fda0913ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/passportPopup.png"
-dest_files=["res://.godot/imported/passportPopup.png-92f481233914a006d1adce14007d9f58.ctex"]
+source_file="res://assets/passportPopup_edit1.png"
+dest_files=["res://.godot/imported/passportPopup_edit1.png-c786a85cea11a8c03f0af03fda0913ea.ctex"]
 
 [params]
 
