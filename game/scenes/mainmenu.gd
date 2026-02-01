@@ -17,7 +17,7 @@ func _on_start_pressed():
 	get_tree().change_scene_to_file("res://scenes/opening.tscn")
 
 func _on_start_hovered():
-	label.position.y = 52
+	label.position.y = 30
 
 func _on_start_unhovered():
-	label.position.y = 25
+	label.position.y = 12
