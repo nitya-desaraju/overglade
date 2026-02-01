@@ -61,6 +61,7 @@ stretch_mode = 5
 modulate = Color(1, 1, 1, 0)
 offset_right = 1024.0
 offset_bottom = 576.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

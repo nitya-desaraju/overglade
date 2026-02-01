@@ -50,4 +50,4 @@ func advance_dialogue():
 func finish_dialogue():
 	anim_player.play("fade") 
 	await anim_player.animation_finished
-	get_tree().change_scene_to_file("res://passport.tscn")
+	get_tree().change_scene_to_file("res://scenes/passport.tscn")

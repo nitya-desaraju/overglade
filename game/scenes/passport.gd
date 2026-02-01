@@ -30,7 +30,7 @@ var current_good_count: int = 0
 var current_bad_count: int = 0
 var is_day_over: bool = false
 
-var good_deeds = ["Saved a kitten", "Donated blood", "Recycled", "Honest person", "Kind to elders", ""]
+var good_deeds = ["Saved a kitten", "Donated blood", "Recycled", "Honest person", "Kind to elders",]
 var bad_deeds = ["Littered", "Stole", "Double parked", "Lied to parents", "Cut in line", "Chewed with their mouth open", "Murderer", "Hypocrite", "Ungrateful"]
 
 var time = 1
@@ -150,15 +150,15 @@ func show_end_day_summary():
 	if (scene_correct / total * 100.0) if total > 0 else 0.0 >= 50.0 and scene_correct >= 5:
 		notif.show()
 		
-	right_score.text = "Correct: " + str(scene_correct)
-	wrong_score.text = "Correct: " + str(scene_incorrect)
-	accuracy.text = "Accuracy: " + str(percent) + "%"
+	right_score.text = str(scene_correct)
+	wrong_score.text = str(scene_incorrect)
+	accuracy.text = str(percent) + "%"
 
 func _on_next_day_pressed():
 	var total = float(scene_correct + scene_incorrect)
 	var percent = (scene_correct / total * 100.0) if total > 0 else 0.0
 	
 	if percent >= 50.0 and scene_correct >= 5:
-		get_tree().change_scene_to_file("res://baggage.tscn")
+		get_tree().change_scene_to_file("res://scenes/baggage.tscn")
 	else:
 		get_tree().reload_current_scene()
