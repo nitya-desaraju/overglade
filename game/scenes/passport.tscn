@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ddyetqyxkhfn8"]
+[gd_scene load_steps=25 format=3 uid="uid://ddyetqyxkhfn8"]
 
 [ext_resource type="Script" uid="uid://rlhw5jwmqbyc" path="res://scenes/passport.gd" id="1_qnwf8"]
 [ext_resource type="Texture2D" uid="uid://dj4sfn2erodis" path="res://assets/clock/clock.png" id="2_vyb2i"]
@@ -21,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://bh576rhh4v6lj" path="res://assets/suitcase3.png" id="16_btdx1"]
 [ext_resource type="Texture2D" uid="uid://c6hvyhlfut8a7" path="res://assets/suitcase4.png" id="17_hk8k7"]
 [ext_resource type="Texture2D" uid="uid://b5la4odds8bui" path="res://assets/suitcase5.png" id="18_lj442"]
+[ext_resource type="Texture2D" uid="uid://d02bxp4c0mp4u" path="res://assets/metaldetector.png" id="21_hk8k7"]
+[ext_resource type="Texture2D" uid="uid://dpxsoaoky1l57" path="res://assets/rulebook.png" id="23_lj442"]
+[ext_resource type="Texture2D" uid="uid://cbca36c482tkt" path="res://assets/rulebook_hover.png" id="24_tbjxl"]
 
 [node name="passport" type="Node2D"]
 script = ExtResource("1_qnwf8")
@@ -30,6 +33,18 @@ suitcases = Array[Texture2D]([ExtResource("14_54mmm"), ExtResource("15_mr6io"), 
 [node name="background" type="TextureRect" parent="."]
 offset_right = 1024.0
 offset_bottom = 576.0
+
+[node name="clock" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_vyb2i")
+
+[node name="clockHand" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_r6ymf")
 
 [node name="baggage" type="TextureRect" parent="."]
 offset_left = -190.0
@@ -52,22 +67,17 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="metalDetector" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 202.0
+offset_top = 137.0
+offset_right = 290.0
+offset_bottom = 386.0
+texture = ExtResource("21_hk8k7")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="passport" type="TextureButton" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="clock" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_vyb2i")
-
-[node name="clockHand" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("3_r6ymf")
 
 [node name="table" type="TextureRect" parent="."]
 offset_top = 380.0
@@ -78,10 +88,12 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="rulebook" type="TextureButton" parent="."]
-offset_left = 304.0
-offset_top = 66.0
-offset_right = 464.0
-offset_bottom = 215.0
+offset_left = 902.0
+offset_top = 21.0
+offset_right = 1000.0
+offset_bottom = 106.0
+texture_normal = ExtResource("23_lj442")
+texture_hover = ExtResource("24_tbjxl")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -150,10 +162,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="action" type="HBoxContainer" parent="."]
-offset_left = 775.0
-offset_top = 3.0
-offset_right = 1018.0
-offset_bottom = 239.0
+offset_left = 454.0
+offset_top = 263.0
+offset_right = 697.0
+offset_bottom = 499.0
 
 [node name="heaven" type="TextureButton" parent="action"]
 layout_mode = 2

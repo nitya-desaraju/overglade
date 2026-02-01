@@ -171,7 +171,7 @@ func _on_next_day_pressed():
 	var total = float(scene_correct + scene_incorrect)
 	var percent = (scene_correct / total * 100.0) if total > 0 else 0.0
 	
-	if percent >= 75.0:
-		get_tree().change_scene_to_file("res://precheck.tscn")
+	if percent >= 100.0:
+		get_tree().change_scene_to_file("res://end.tscn")
 	else:
 		get_tree().reload_current_scene()
