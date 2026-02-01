@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://1v7g3g2sxmek"]
+
+[ext_resource type="Texture2D" uid="uid://dgt6s8641bdqs" path="res://assets/people/female2.png" id="1_1qe5u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0mfc"]
+atlas = ExtResource("1_1qe5u")
+region = Rect2(38, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imq6i"]
+atlas = ExtResource("1_1qe5u")
+region = Rect2(0, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vidog"]
+atlas = ExtResource("1_1qe5u")
+region = Rect2(0, 38, 38, 38)
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0mfc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imq6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vidog")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 2.0
+}]

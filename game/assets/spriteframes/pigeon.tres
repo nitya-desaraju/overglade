@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bgswi77f01tkl"]
+
+[ext_resource type="Texture2D" uid="uid://cxlpoino8ad1q" path="res://assets/people/pigeon_2.png" id="1_u13un"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atbg2"]
+atlas = ExtResource("1_u13un")
+region = Rect2(0, 50, 100, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrtfp"]
+atlas = ExtResource("1_u13un")
+region = Rect2(0, 0, 100, 50)
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atbg2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrtfp")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 2.0
+}]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://ddyetqyxkhfn8"]
+[gd_scene load_steps=42 format=3 uid="uid://ddyetqyxkhfn8"]
 
 [ext_resource type="Script" uid="uid://rlhw5jwmqbyc" path="res://scenes/passport.gd" id="1_qnwf8"]
 [ext_resource type="Texture2D" uid="uid://dj4sfn2erodis" path="res://assets/clock/clock.png" id="2_vyb2i"]
@@ -15,12 +15,17 @@
 [ext_resource type="Texture2D" uid="uid://ce8bves4rrf4n" path="res://assets/clock/clock_hand10.png" id="12_btdx1"]
 [ext_resource type="Texture2D" uid="uid://ce08agvsxol0h" path="res://assets/clock/clock_hand11.png" id="13_hk8k7"]
 [ext_resource type="Texture2D" uid="uid://w4ws87wl38a3" path="res://assets/suitcase1.png" id="14_54mmm"]
+[ext_resource type="SpriteFrames" uid="uid://b2kwnvr7hbijj" path="res://assets/spriteframes/male1.tres" id="14_athp0"]
 [ext_resource type="Texture2D" uid="uid://cqdwqsn02mub0" path="res://assets/scanner.png" id="14_r66ti"]
+[ext_resource type="SpriteFrames" uid="uid://dy55hy7mvq58i" path="res://assets/spriteframes/male2.tres" id="15_8t70e"]
 [ext_resource type="Texture2D" uid="uid://u877kmcn4h5s" path="res://assets/suitcase2.png" id="15_mr6io"]
 [ext_resource type="Texture2D" uid="uid://chltg7tr70skx" path="res://assets/table.png" id="15_pludd"]
 [ext_resource type="Texture2D" uid="uid://bh576rhh4v6lj" path="res://assets/suitcase3.png" id="16_btdx1"]
+[ext_resource type="SpriteFrames" uid="uid://bgswi77f01tkl" path="res://assets/spriteframes/pigeon.tres" id="16_m855n"]
+[ext_resource type="SpriteFrames" uid="uid://bqptsihu5v1rd" path="res://assets/spriteframes/female1.tres" id="17_dot6e"]
 [ext_resource type="Texture2D" uid="uid://c6hvyhlfut8a7" path="res://assets/suitcase4.png" id="17_hk8k7"]
 [ext_resource type="Texture2D" uid="uid://b5la4odds8bui" path="res://assets/suitcase5.png" id="18_lj442"]
+[ext_resource type="SpriteFrames" uid="uid://1v7g3g2sxmek" path="res://assets/spriteframes/female2.tres" id="18_ymm13"]
 [ext_resource type="Texture2D" uid="uid://d02bxp4c0mp4u" path="res://assets/metaldetector.png" id="21_hk8k7"]
 [ext_resource type="Texture2D" uid="uid://dpxsoaoky1l57" path="res://assets/rulebook.png" id="23_lj442"]
 [ext_resource type="Texture2D" uid="uid://ciej4t2yu5j8m" path="res://assets/passport.png" id="23_tbjxl"]
@@ -40,6 +45,7 @@
 [node name="passport" type="Node2D"]
 script = ExtResource("1_qnwf8")
 clock_hands = Array[Texture2D]([ExtResource("3_r6ymf"), ExtResource("3_6lqes"), ExtResource("4_pludd"), ExtResource("5_r66ti"), ExtResource("6_pjesw"), ExtResource("7_2xayt"), ExtResource("8_75d8l"), ExtResource("9_fjnuf"), ExtResource("10_54mmm"), ExtResource("11_mr6io"), ExtResource("12_btdx1"), ExtResource("13_hk8k7"), ExtResource("3_r6ymf")])
+character_data = Array[SpriteFrames]([ExtResource("18_ymm13"), ExtResource("17_dot6e"), ExtResource("16_m855n"), ExtResource("15_8t70e"), ExtResource("14_athp0")])
 suitcases = Array[Texture2D]([ExtResource("14_54mmm"), ExtResource("15_mr6io"), ExtResource("16_btdx1"), ExtResource("17_hk8k7"), ExtResource("18_lj442")])
 
 [node name="background" type="TextureRect" parent="."]
@@ -74,9 +80,8 @@ texture = ExtResource("14_r66ti")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="human" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="human" type="AnimatedSprite2D" parent="."]
+scale = Vector2(6, 6)
 
 [node name="metalDetector" type="TextureRect" parent="."]
 offset_left = 202.0

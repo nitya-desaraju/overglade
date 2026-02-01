@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://d03hqljgnmu3m"]
+[gd_scene load_steps=43 format=3 uid="uid://d03hqljgnmu3m"]
 
 [ext_resource type="Script" uid="uid://dg3svefvmjyls" path="res://scenes/boardingpass.gd" id="1_yqv01"]
 [ext_resource type="Texture2D" uid="uid://53urjslnccgi" path="res://assets/clock/clock_hand12.png" id="2_q54tc"]
@@ -16,11 +16,16 @@
 [ext_resource type="Texture2D" uid="uid://cqdwqsn02mub0" path="res://assets/scanner.png" id="14_6oyea"]
 [ext_resource type="Texture2D" uid="uid://w4ws87wl38a3" path="res://assets/suitcase1.png" id="14_oq1vo"]
 [ext_resource type="Texture2D" uid="uid://dj4sfn2erodis" path="res://assets/clock/clock.png" id="14_oycsi"]
+[ext_resource type="SpriteFrames" uid="uid://bqptsihu5v1rd" path="res://assets/spriteframes/female1.tres" id="14_rg0cl"]
 [ext_resource type="Texture2D" uid="uid://u877kmcn4h5s" path="res://assets/suitcase2.png" id="15_56q75"]
+[ext_resource type="SpriteFrames" uid="uid://1v7g3g2sxmek" path="res://assets/spriteframes/female2.tres" id="15_pwxny"]
 [ext_resource type="Texture2D" uid="uid://chltg7tr70skx" path="res://assets/table.png" id="15_q54tc"]
 [ext_resource type="Theme" uid="uid://daxi17ckej5hs" path="res://main.tres" id="15_vwnb8"]
+[ext_resource type="SpriteFrames" uid="uid://bgswi77f01tkl" path="res://assets/spriteframes/pigeon.tres" id="16_07a65"]
 [ext_resource type="Texture2D" uid="uid://bh576rhh4v6lj" path="res://assets/suitcase3.png" id="16_iywhv"]
+[ext_resource type="SpriteFrames" uid="uid://dy55hy7mvq58i" path="res://assets/spriteframes/male2.tres" id="17_tgigr"]
 [ext_resource type="Texture2D" uid="uid://c6hvyhlfut8a7" path="res://assets/suitcase4.png" id="17_wlelf"]
+[ext_resource type="SpriteFrames" uid="uid://b2kwnvr7hbijj" path="res://assets/spriteframes/male1.tres" id="18_eic6g"]
 [ext_resource type="Texture2D" uid="uid://b5la4odds8bui" path="res://assets/suitcase5.png" id="18_h04ti"]
 [ext_resource type="Texture2D" uid="uid://d02bxp4c0mp4u" path="res://assets/metaldetector.png" id="22_wlelf"]
 [ext_resource type="Texture2D" uid="uid://bf77wuu6qjgm5" path="res://assets/boardingpass.png" id="24_de6ro"]
@@ -41,6 +46,7 @@
 [node name="boardingpass" type="Node2D"]
 script = ExtResource("1_yqv01")
 clock_hands = Array[Texture2D]([ExtResource("2_q54tc"), ExtResource("3_q54tc"), ExtResource("4_6sm4p"), ExtResource("5_6oyea"), ExtResource("6_vwnb8"), ExtResource("7_oaegj"), ExtResource("8_m1tug"), ExtResource("9_xgqn8"), ExtResource("10_oq1vo"), ExtResource("11_56q75"), ExtResource("12_iywhv"), ExtResource("13_wlelf")])
+character_data = Array[SpriteFrames]([ExtResource("14_rg0cl"), ExtResource("15_pwxny"), ExtResource("16_07a65"), ExtResource("17_tgigr"), ExtResource("18_eic6g")])
 suitcases = Array[Texture2D]([ExtResource("14_oq1vo"), ExtResource("15_56q75"), ExtResource("16_iywhv"), ExtResource("17_wlelf"), ExtResource("18_h04ti")])
 
 [node name="background" type="TextureRect" parent="."]
@@ -87,9 +93,7 @@ theme_override_font_sizes/normal_font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="human" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="human" type="AnimatedSprite2D" parent="."]
 
 [node name="metalDetector" type="TextureRect" parent="."]
 offset_left = 202.0

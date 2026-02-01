@@ -5,7 +5,7 @@ extends Node2D
 @onready var clock_hand = $clockHand
 @onready var overlay = $overlay
 @export var clock_hands: Array[Texture2D] = [] 
-@export var char_textures: Array[Texture2D] = []
+@export var character_data: Array[SpriteFrames] = []
 @export var suitcases: Array[Texture2D] = []
 @onready var human = $human
 @onready var passport = $passport
@@ -75,20 +75,24 @@ func close_all_popups():
 	
 func spawn_new_character():
 	if is_day_over: return
-	human.texture = char_textures.pick_random()
+	human.sprite_frames = character_data.pick_random()
 	generate_passport_data()
 	generate_liquid_data()
 	generate_precheck_data()
 	human.position = Vector2(-300, 300)
+	human.play("walk")
 	passport.position = Vector2(-60, 415)
 	baggage.position = Vector2(-200, 67)
 	boardingpass.position = Vector2(-150, 500)
 	
 	var tween = create_tween().set_parallel(true)
-	tween.tween_property(human, "position", Vector2(400, 300), 1.0).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(human, "position", Vector2(400, 300), 5.0).set_trans(Tween.TRANS_QUAD)
 	tween.tween_property(passport, "position", Vector2(450, 415), 3.0).set_trans(Tween.TRANS_QUAD)
 	tween.tween_property(boardingpass, "position", Vector2(410, 500), 3.0).set_trans(Tween.TRANS_QUAD)
 	tween.tween_property(baggage, "position", Vector2(600, 67), 5.0).set_trans(Tween.TRANS_QUAD)
+	
+	await tween.finished
+	human.play("idle")
 	
 func generate_passport_data():
 	good.text = ""
@@ -154,10 +158,11 @@ func _process_decision(sent_to_heaven: bool):
 		#effects.texture = fire_tex
 	
 	var tween = create_tween()
-	tween.tween_property(human, "position:x", 1200, 0.8)
-	tween.tween_property(passport, "position:x", 1200, 0.8)
-	tween.tween_property(boardingpass, "position:x", 1200, 0.8)
-	tween.tween_property(baggage, "position:x", 1200, 0.8)
+	human.stop()
+	tween.tween_property(human, "position:x", 1200, 0.5)
+	tween.tween_property(passport, "position:x", 1200, 0.5)
+	tween.tween_property(boardingpass, "position:x", 1200, 0.5)
+	tween.tween_property(baggage, "position:x", 1200, 0.5)
 	effects.show()
 	
 	await get_tree().create_timer(1.0).timeout
