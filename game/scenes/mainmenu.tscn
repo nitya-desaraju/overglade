@@ -3,21 +3,7 @@
 [ext_resource type="Script" uid="uid://bhw8ahkxskcts" path="res://scenes/mainmenu.gd" id="1_5mbse"]
 [ext_resource type="Texture2D" uid="uid://ci12khhdp4d8q" path="res://assets/hjnb.png" id="2_r3g3c"]
 [ext_resource type="Texture2D" uid="uid://dih1b3gfmt4y1" path="res://assets/jhkj.png" id="3_3vvtq"]
-
-[sub_resource type="Animation" id="Animation_natt5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
+[ext_resource type="Theme" uid="uid://daxi17ckej5hs" path="res://main.tres" id="4_3vvtq"]
 
 [sub_resource type="Animation" id="Animation_5mbse"]
 resource_name = "fade"
@@ -37,7 +23,6 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r3g3c"]
 _data = {
-&"RESET": SubResource("Animation_natt5"),
 &"fade": SubResource("Animation_5mbse")
 }
 
@@ -57,7 +42,19 @@ texture_normal = ExtResource("2_r3g3c")
 texture_hover = ExtResource("3_3vvtq")
 stretch_mode = 5
 
+[node name="RichTextLabel" type="RichTextLabel" parent="start"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 25.0
+offset_right = 355.0
+offset_bottom = 146.0
+mouse_filter = 2
+theme = ExtResource("4_3vvtq")
+theme_override_font_sizes/normal_font_size = 80
+text = "START"
+
 [node name="screenFade" type="ColorRect" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0)
 offset_right = 1024.0
 offset_bottom = 576.0

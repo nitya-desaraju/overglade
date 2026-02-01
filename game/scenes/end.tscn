@@ -208,6 +208,7 @@ offset_top = 28.0
 offset_right = 217.0
 offset_bottom = 90.0
 mouse_filter = 1
+theme = ExtResource("4_o5lv4")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 22
 text = "Main
