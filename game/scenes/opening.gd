@@ -6,7 +6,7 @@ extends Node2D
 
 var lines: Array[String] = [
 	"Welcome! If you can't tell, I'm the Grim Reaper. I have hired you to be my assistant!",
-	"I will send you souls, and you have to decide whether to send them to heaven or hell based on their life.",
+	"I will send you souls, and you have to decide whether to send them on the plane to heaven or hell based on their life.",
 	"If you're good at your job, there will be more details you have to check for...",
 	"So, make sure to check your rulebook often for new rules!",
 	"Ready for your first day?"
