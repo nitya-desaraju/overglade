@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://ciej4t2yu5j8m" path="res://assets/passport.png" id="24_v27hl"]
 [ext_resource type="Texture2D" uid="uid://c1ytrewiygdkp" path="res://assets/passport_hover.png" id="25_m4q7d"]
 [ext_resource type="Texture2D" uid="uid://cbca36c482tkt" path="res://assets/rulebook_hover.png" id="25_v27hl"]
-[ext_resource type="Texture2D" uid="uid://tr1iir4pe37l" path="res://assets/passportPopup.png" id="28_m4q7d"]
+[ext_resource type="Texture2D" uid="uid://ulo52nuihhaf" path="res://assets/passportPopup_edit2.png" id="28_46g6y"]
 [ext_resource type="Texture2D" uid="uid://cp5nktn8gfy4a" path="res://assets/rulebookpopup.png" id="29_46g6y"]
 
 [node name="baggage" type="Node2D"]
@@ -138,16 +138,20 @@ offset_bottom = 576.0
 [node name="passportPopup" type="TextureRect" parent="overlay"]
 visible = false
 layout_mode = 0
-offset_right = 1024.0
-offset_bottom = 576.0
-texture = ExtResource("28_m4q7d")
+offset_left = 82.0
+offset_top = 25.5
+offset_right = 942.0
+offset_bottom = 550.5
+texture = ExtResource("28_46g6y")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="good" type="RichTextLabel" parent="overlay/passportPopup"]
 layout_mode = 0
-offset_left = 158.0
-offset_top = 230.0
-offset_right = 490.0
-offset_bottom = 486.0
+offset_left = 100.0
+offset_top = 190.0
+offset_right = 432.0
+offset_bottom = 446.0
 theme_override_colors/default_color = Color(0, 0.32941177, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
 text = "- sgfjlfgkdslf
@@ -158,10 +162,10 @@ text = "- sgfjlfgkdslf
 
 [node name="bad" type="RichTextLabel" parent="overlay/passportPopup"]
 layout_mode = 0
-offset_left = 537.0
-offset_top = 230.0
-offset_right = 869.0
-offset_bottom = 486.0
+offset_left = 458.0
+offset_top = 190.0
+offset_right = 790.0
+offset_bottom = 446.0
 theme_override_colors/default_color = Color(0.65882355, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
 text = "- sgfjlfgkdslf
@@ -172,10 +176,10 @@ text = "- sgfjlfgkdslf
 
 [node name="RichTextLabel" type="RichTextLabel" parent="overlay/passportPopup"]
 layout_mode = 0
-offset_left = 168.0
-offset_top = 90.0
-offset_right = 536.0
-offset_bottom = 181.0
+offset_left = 100.0
+offset_top = 65.5
+offset_right = 468.0
+offset_bottom = 156.5
 mouse_filter = 1
 theme = ExtResource("15_jn1n6")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -184,10 +188,10 @@ text = "PASSPORT"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="overlay/passportPopup"]
 layout_mode = 0
-offset_left = 552.0
-offset_top = 90.0
-offset_right = 920.0
-offset_bottom = 181.0
+offset_left = 460.0
+offset_top = 65.5
+offset_right = 828.0
+offset_bottom = 156.5
 mouse_filter = 1
 theme = ExtResource("15_jn1n6")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -196,10 +200,10 @@ text = "PASSPORT"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="overlay/passportPopup"]
 layout_mode = 0
-offset_left = 256.0
-offset_top = 170.0
-offset_right = 404.0
-offset_bottom = 257.0
+offset_left = 185.0
+offset_top = 135.0
+offset_right = 333.0
+offset_bottom = 222.0
 mouse_filter = 1
 theme = ExtResource("15_jn1n6")
 theme_override_colors/default_color = Color(6.9789587e-07, 0.32750946, 0, 1)
@@ -208,10 +212,10 @@ text = "Merits"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="overlay/passportPopup"]
 layout_mode = 0
-offset_left = 658.0
-offset_top = 170.0
-offset_right = 806.0
-offset_bottom = 257.0
+offset_left = 565.0
+offset_top = 135.0
+offset_right = 713.0
+offset_bottom = 222.0
 mouse_filter = 1
 theme = ExtResource("15_jn1n6")
 theme_override_colors/default_color = Color(0.65891117, 1.9131974e-06, 5.2943824e-07, 1)

@@ -31,8 +31,8 @@ var current_bad_count: int = 0
 var is_day_over: bool = false
 var liquid_amt: float = 0.0
 
-var good_deeds = ["- Saved a kitten", "- Donated blood", "- Recycled", "- Honest person", "- Kind to elders"]
-var bad_deeds = ["- Littered", "- Stole", "- Double parked", "- Lied to parents", "- Cut in line"]
+var good_deeds = ["Saved a kitten", "Donated blood", "Recycled", "Honest person", "Kind to elders"]
+var bad_deeds = ["Littered", "Stole", "Double parked", "Lied to parents", "Cut in line"]
 
 var time = 1
 
@@ -81,7 +81,7 @@ func spawn_new_character():
 	
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property(human, "position", Vector2(400, 300), 1.0).set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(passport, "position", Vector2(400, 450), 1.0).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(passport, "position", Vector2(450, 450), 3.0).set_trans(Tween.TRANS_QUAD)
 	tween.tween_property(baggage, "position", Vector2(600, 67), 5.0).set_trans(Tween.TRANS_QUAD)
 	
 func generate_passport_data():

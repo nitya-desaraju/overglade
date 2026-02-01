@@ -85,8 +85,8 @@ func spawn_new_character():
 	
 	var tween = create_tween().set_parallel(true)
 	tween.tween_property(human, "position", Vector2(400, 300), 1.0).set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(passport, "position", Vector2(400, 415), 1.0).set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(boardingpass, "position", Vector2(400, 500), 1.0).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(passport, "position", Vector2(450, 415), 3.0).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(boardingpass, "position", Vector2(410, 500), 3.0).set_trans(Tween.TRANS_QUAD)
 	tween.tween_property(baggage, "position", Vector2(600, 67), 5.0).set_trans(Tween.TRANS_QUAD)
 	
 func generate_passport_data():

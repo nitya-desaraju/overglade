@@ -29,16 +29,16 @@ var current_good_count: int = 0
 var current_bad_count: int = 0
 var is_day_over: bool = false
 
-var good_deeds = ["- Saved a kitten", "- Donated blood", "- Recycled", "- Honest person", "- Kind to elders"]
-var bad_deeds = ["- Littered", "- Stole", "- Double parked", "- Lied to parents", "- Cut in line"]
+var good_deeds = ["Saved a kitten", "Donated blood", "Recycled", "Honest person", "Kind to elders", ""]
+var bad_deeds = ["Littered", "Stole", "Double parked", "Lied to parents", "Cut in line", "Chewed with their mouth open", "Murderer", "Hypocrite", "Ungrateful"]
 
 var time = 1
 
 func _ready():
 	rulebook.pressed.connect(_on_rulebook_pressed)
 	passport.pressed.connect(_on_passport_pressed)
-	$action/heaven.pressed.connect(func(): _process_decision(true))
-	$action/hell.pressed.connect(func(): _process_decision(false))
+	$heaven.pressed.connect(func(): _process_decision(true))
+	$hell.pressed.connect(func(): _process_decision(false))
 	next.pressed.connect(_on_next_day_pressed)
 	close.pressed.connect(_on_background_clicked)
 	
@@ -78,8 +78,8 @@ func spawn_new_character():
 	baggage.position = Vector2(-200, 67)
 	
 	var tween = create_tween().set_parallel(true)
-	tween.tween_property(human, "position", Vector2(400, 300), 1.0).set_trans(Tween.TRANS_QUINT)
-	tween.tween_property(passport, "position", Vector2(400, 450), 1.0).set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(human, "position", Vector2(400, 300), 1.0).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(passport, "position", Vector2(450, 450), 3.0).set_trans(Tween.TRANS_QUAD)
 	tween.tween_property(baggage, "position", Vector2(600, 67), 5.0).set_trans(Tween.TRANS_QUAD)
 	
 func generate_passport_data():
@@ -100,7 +100,6 @@ func generate_passport_data():
 		good.text += "- " + goods[i] + "\n"
 	for i in range(current_bad_count):
 		bad.text += "- " + bads[i] + "\n"
-		
 
 	
 func _process_decision(sent_to_heaven: bool):
@@ -124,6 +123,7 @@ func _process_decision(sent_to_heaven: bool):
 	
 	await get_tree().create_timer(1.0).timeout
 	effects.hide()
+	await get_tree().create_timer(5.0).timeout
 	spawn_new_character()
 	
 func run_timer():
