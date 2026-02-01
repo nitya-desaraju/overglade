@@ -34,8 +34,8 @@ var is_day_over: bool = false
 var liquid_amt: float = 0.0
 var precheck: bool = false
 
-var good_deeds = ["Saved a kitten", "Donated blood", "Recycled", "Honest person", "Kind to elders"]
-var bad_deeds = ["Littered", "Stole", "Double parked", "Lied to parents", "Cut in line"]
+var good_deeds = ["Saved a kitten", "Donated blood", "Recycled", "Honest person", "Kind to elders", "Baby-talked to dogs", "Murdered a murderer", "Laughed when a baby falls", "Told the boyfriend that the bestfriend is cheating", "Told people there's something in their teeth", "Pretended to be interested in someone else's passion", "Stopped being friends with someone that hurt their friends"]
+var bad_deeds = ["Littered", "Stole", "Double parked", "Lied to parents", "Cut in line", "Chewed with their mouth open", "Murderer", "Hypocrite", "Ungrateful", "Baby-talked to babies", "Hated on other generations", "Abbreviated everything", "Ate on a wooden cutting board", "Recorded everything", "Always 'forgot' their wallet", "Stole their friends' coins"]
 
 var time = 1
 
@@ -96,18 +96,28 @@ func generate_passport_data():
 	
 	current_good_count = randi_range(0, 5)
 	current_bad_count = randi_range(0, 5)
+	
 	while current_good_count == current_bad_count:
 		current_bad_count = randi_range(0, 5)
 	
-	var goods = good_deeds.duplicate()
-	var bads = bad_deeds.duplicate()
-	goods.shuffle()
-	bads.shuffle()
+	var selected_deeds = []
+	var goods_pool = good_deeds.duplicate()
+	var bads_pool = bad_deeds.duplicate()
+	goods_pool.shuffle()
+	bads_pool.shuffle()
 	
 	for i in range(current_good_count):
-		good.text += "- " + goods[i] + "\n"
+		selected_deeds.append("- " + goods_pool[i])
 	for i in range(current_bad_count):
-		bad.text += "- " + bads[i] + "\n"
+		selected_deeds.append("- " + bads_pool[i])
+	
+	selected_deeds.shuffle()
+	
+	for i in range(selected_deeds.size()):
+		if i < 5:
+			good.text += selected_deeds[i] + "\n"
+		else:
+			bad.text += selected_deeds[i] + "\n"
 		
 func generate_liquid_data():
 	var raw_val = randf_range(0.0, 5.0)

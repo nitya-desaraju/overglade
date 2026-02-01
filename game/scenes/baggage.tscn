@@ -174,11 +174,11 @@ stretch_mode = 5
 [node name="good" type="RichTextLabel" parent="overlay/passportPopup"]
 layout_mode = 0
 offset_left = 100.0
-offset_top = 190.0
+offset_top = 140.5
 offset_right = 432.0
-offset_bottom = 446.0
-theme_override_colors/default_color = Color(0, 0.32941177, 0, 1)
-theme_override_font_sizes/normal_font_size = 30
+offset_bottom = 452.5
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
 text = "- sgfjlfgkdslf
 -wgjjlghsl
 --sbnlnfnbjkjn
@@ -188,11 +188,11 @@ text = "- sgfjlfgkdslf
 [node name="bad" type="RichTextLabel" parent="overlay/passportPopup"]
 layout_mode = 0
 offset_left = 458.0
-offset_top = 190.0
+offset_top = 140.0
 offset_right = 790.0
-offset_bottom = 446.0
-theme_override_colors/default_color = Color(0.65882355, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 30
+offset_bottom = 460.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
 text = "- sgfjlfgkdslf
 -wgjjlghsl
 --sbnlnfnbjkjn
@@ -222,30 +222,6 @@ theme = ExtResource("15_jn1n6")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 60
 text = "PASSPORT"
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="overlay/passportPopup"]
-layout_mode = 0
-offset_left = 185.0
-offset_top = 135.0
-offset_right = 333.0
-offset_bottom = 222.0
-mouse_filter = 1
-theme = ExtResource("15_jn1n6")
-theme_override_colors/default_color = Color(6.9789587e-07, 0.32750946, 0, 1)
-theme_override_font_sizes/normal_font_size = 40
-text = "Merits"
-
-[node name="RichTextLabel4" type="RichTextLabel" parent="overlay/passportPopup"]
-layout_mode = 0
-offset_left = 565.0
-offset_top = 135.0
-offset_right = 713.0
-offset_bottom = 222.0
-mouse_filter = 1
-theme = ExtResource("15_jn1n6")
-theme_override_colors/default_color = Color(0.65891117, 1.9131974e-06, 5.2943824e-07, 1)
-theme_override_font_sizes/normal_font_size = 40
-text = "Sins"
 
 [node name="rulebookPopup" type="TextureRect" parent="overlay"]
 visible = false
