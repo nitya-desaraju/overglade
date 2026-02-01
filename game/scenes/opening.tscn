@@ -73,9 +73,9 @@ stretch_mode = 5
 [node name="dialogue" type="RichTextLabel" parent="UI/dialogueBox"]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 20.0
+offset_top = 18.0
 offset_right = 944.0
-offset_bottom = 164.0
+offset_bottom = 162.0
 theme = ExtResource("4_fvetl")
 theme_override_font_sizes/normal_font_size = 37
 text = "I will send you souls, and you have to decide whether to send them on the plane to heaven or hell based on their life."
