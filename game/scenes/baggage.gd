@@ -104,9 +104,12 @@ func generate_passport_data():
 		bad.text += "- " + bads[i] + "\n"
 		
 func generate_liquid_data():
-	liquid_amt = randf_range(0.0,5.0)
-	if baggage.position.x == 400:
-		liquid.text = str(liquid_amt) + " oz"
+	var raw_val = randf_range(0.0, 5.0)
+	liquid_amt = snapped(raw_val, 0.1)
+	while baggage.position.x < 350:
+		await get_tree().process_frame 
+	
+	liquid.text = str(liquid_amt) + " oz"
 		
 func _process_decision(sent_to_heaven: bool):
 	if is_day_over: return

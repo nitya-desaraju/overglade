@@ -77,6 +77,7 @@ offset_top = 56.0
 offset_right = 524.0
 offset_bottom = 132.0
 theme = ExtResource("15_vwnb8")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 50
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -277,7 +278,7 @@ text = "Job: Grim Reaper's Assistant
 Use the soul's passport to determine whether they should be sent to heaven or hell. 
 
 - If they have more merits than sins, they go to heaven.
-- If they have more sins than merits, they go to sins."
+- If they have more sins than merits, they go to hell."
 
 [node name="endPopup" type="TextureRect" parent="overlay"]
 visible = false
@@ -323,5 +324,3 @@ stretch_mode = 5
 
 [node name="effects" type="AnimatedSprite2D" parent="."]
 visible = false
-
-[connection signal="pressed" from="overlay/close" to="." method="_on_background_clicked"]

@@ -109,9 +109,12 @@ func generate_passport_data():
 		bad.text += "- " + bads[i] + "\n"
 		
 func generate_liquid_data():
-	liquid_amt = randf_range(0.0,5.0)
-	if baggage.position.x == 400:
-		liquid.text = str(liquid_amt) + " oz"
+	var raw_val = randf_range(0.0, 5.0)
+	liquid_amt = snapped(raw_val, 0.1)
+	while baggage.position.x < 350:
+		await get_tree().process_frame 
+	
+	liquid.text = str(liquid_amt) + " oz"
 		
 func generate_precheck_data():
 	var chance = randi_range(1,10)
@@ -171,7 +174,7 @@ func show_end_day_summary():
 	var percent = (scene_correct / total * 100.0) if total > 0 else 0.0
 	
 	right_score.text = "Correct: " + str(scene_correct)
-	wrong_score.text = "Correct: " + str(scene_incorrect)
+	wrong_score.text = "Incorrect: " + str(scene_incorrect)
 	accuracy.text = "Accuracy: " + str(percent) + "%"
 
 func _on_next_day_pressed():

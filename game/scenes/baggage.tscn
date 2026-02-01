@@ -269,7 +269,7 @@ text = "Job: Grim Reaper's Assistant
 Use the soul's passport to determine whether they should be sent to heaven or hell. 
 
 - If they have more merits than sins, they go to heaven.
-- If they have more sins than merits, they go to sins."
+- If they have more sins than merits, they go to hell."
 
 [node name="endPopup" type="TextureRect" parent="overlay"]
 visible = false
