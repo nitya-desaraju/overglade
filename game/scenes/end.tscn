@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c13s6w3uv4lfk"]
+[gd_scene load_steps=11 format=3 uid="uid://c13s6w3uv4lfk"]
 
 [ext_resource type="Script" uid="uid://s7b7bcg787oi" path="res://scenes/end.gd" id="1_bvfni"]
 [ext_resource type="Texture2D" uid="uid://dnrrt4rbic42n" path="res://assets/grimreaper.png" id="2_s4tl2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://daxi17ckej5hs" path="res://main.tres" id="4_o5lv4"]
 [ext_resource type="Texture2D" uid="uid://b2ikv25el6dm7" path="res://assets/scorePopup.png" id="5_8hmjt"]
 [ext_resource type="Texture2D" uid="uid://b123p7rji75ru" path="res://assets/heaven.png" id="6_o5lv4"]
+[ext_resource type="Texture2D" uid="uid://dqednthovrhuo" path="res://assets/heavenhover.png" id="7_o5lv4"]
 
 [sub_resource type="Animation" id="Animation_gafq3"]
 length = 2.0
@@ -196,6 +197,7 @@ offset_top = 330.0
 offset_right = 838.0
 offset_bottom = 491.0
 texture_normal = ExtResource("6_o5lv4")
+texture_hover = ExtResource("7_o5lv4")
 ignore_texture_size = true
 stretch_mode = 5
 

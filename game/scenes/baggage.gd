@@ -40,8 +40,8 @@ var time = 1
 func _ready():
 	rulebook.pressed.connect(_on_rulebook_pressed)
 	passport.pressed.connect(_on_passport_pressed)
-	$action/heaven.pressed.connect(func(): _process_decision(true))
-	$action/hell.pressed.connect(func(): _process_decision(false))
+	$heaven.pressed.connect(func(): _process_decision(true))
+	$hell.pressed.connect(func(): _process_decision(false))
 	next.pressed.connect(_on_next_day_pressed)
 	close.pressed.connect(_on_background_clicked)
 	

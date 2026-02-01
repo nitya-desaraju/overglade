@@ -6,10 +6,10 @@ extends Node2D
 @onready var popup = $UI/popup
 @onready var overlay = $UI/overlay
 @onready var menu = $UI/popup/menu
+@onready var label = $UI/popup/RichTextLabel
 @onready var right = $UI/popup/right
 @onready var wrong = $UI/popup/wrong
 @onready var accuracy = $UI/popup/accuracy
-
 
 var lines: Array[String] = [
 	"Good job on your first week as my assistant!",
@@ -22,6 +22,9 @@ var is_typing: bool = false
 
 func _ready():
 	menu.pressed.connect(_on_menu_pressed)
+	menu.mouse_entered.connect(_on_menu_hovered)
+	menu.mouse_exited.connect(_on_menu_unhovered)
+
 	dialogue_label.visible_ratio = 0 
 
 	right.text = str(global.total_correct)
@@ -31,6 +34,14 @@ func _ready():
 	anim_player.play_backwards("fade") 
 	await anim_player.animation_finished
 	update_dialogue()
+
+
+func _on_menu_hovered():
+	label.position.y = 44
+
+func _on_menu_unhovered():
+	label.position.y = 28
+
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and popup.visible == false:

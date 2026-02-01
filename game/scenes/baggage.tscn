@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b4totmfguulmf"]
+[gd_scene load_steps=37 format=3 uid="uid://b4totmfguulmf"]
 
 [ext_resource type="Script" uid="uid://dljwicw6fwsct" path="res://scenes/baggage.gd" id="1_xim4f"]
 [ext_resource type="Texture2D" uid="uid://53urjslnccgi" path="res://assets/clock/clock_hand12.png" id="2_1d7r8"]
@@ -28,8 +28,12 @@
 [ext_resource type="Texture2D" uid="uid://c1ytrewiygdkp" path="res://assets/passport_hover.png" id="25_m4q7d"]
 [ext_resource type="Texture2D" uid="uid://cbca36c482tkt" path="res://assets/rulebook_hover.png" id="25_v27hl"]
 [ext_resource type="Texture2D" uid="uid://ulo52nuihhaf" path="res://assets/passportPopup_edit2.png" id="28_46g6y"]
+[ext_resource type="Texture2D" uid="uid://nx152mbsqmp" path="res://assets/hell.png" id="28_bh0fx"]
+[ext_resource type="Texture2D" uid="uid://dudov70tkfnfy" path="res://assets/hellhover.png" id="29_5q8dt"]
 [ext_resource type="Texture2D" uid="uid://cp5nktn8gfy4a" path="res://assets/rulebookpopup.png" id="29_46g6y"]
+[ext_resource type="Texture2D" uid="uid://b123p7rji75ru" path="res://assets/heaven.png" id="30_ckixj"]
 [ext_resource type="Texture2D" uid="uid://b2ikv25el6dm7" path="res://assets/scorePopup.png" id="30_q3bgn"]
+[ext_resource type="Texture2D" uid="uid://dqednthovrhuo" path="res://assets/heavenhover.png" id="31_m4bin"]
 [ext_resource type="Texture2D" uid="uid://dah36my66cjwx" path="res://addons/next.png" id="31_ydcvc"]
 [ext_resource type="Texture2D" uid="uid://bgrj7jkuf7f1t" path="res://addons/nexthover.png" id="32_hvcpu"]
 
@@ -121,6 +125,26 @@ offset_right = 1000.0
 offset_bottom = 106.0
 texture_normal = ExtResource("24_l7qmj")
 texture_hover = ExtResource("25_v27hl")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="hell" type="TextureButton" parent="."]
+offset_left = 920.0
+offset_top = 490.0
+offset_right = 1005.0
+offset_bottom = 555.0
+texture_normal = ExtResource("28_bh0fx")
+texture_hover = ExtResource("29_5q8dt")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="heaven" type="TextureButton" parent="."]
+offset_left = 892.0
+offset_top = 391.0
+offset_right = 1035.0
+offset_bottom = 481.0
+texture_normal = ExtResource("30_ckixj")
+texture_hover = ExtResource("31_m4bin")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -395,18 +419,6 @@ texture_normal = ExtResource("31_ydcvc")
 texture_hover = ExtResource("32_hvcpu")
 ignore_texture_size = true
 stretch_mode = 5
-
-[node name="action" type="HBoxContainer" parent="."]
-offset_left = 775.0
-offset_top = 3.0
-offset_right = 1018.0
-offset_bottom = 239.0
-
-[node name="heaven" type="TextureButton" parent="action"]
-layout_mode = 2
-
-[node name="hell" type="TextureButton" parent="action"]
-layout_mode = 2
 
 [node name="effects" type="AnimatedSprite2D" parent="."]
 visible = false
