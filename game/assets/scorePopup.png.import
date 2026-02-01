@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnrrt4rbic42n"
-path="res://.godot/imported/grimreaper.png-8e5135edea54e6320edf370efb9380f0.ctex"
+uid="uid://b2ikv25el6dm7"
+path="res://.godot/imported/scorePopup.png-3b6e1f410eaefdeb0e13da1abdd43ea8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/grimreaper.png"
-dest_files=["res://.godot/imported/grimreaper.png-8e5135edea54e6320edf370efb9380f0.ctex"]
+source_file="res://assets/scorePopup.png"
+dest_files=["res://.godot/imported/scorePopup.png-3b6e1f410eaefdeb0e13da1abdd43ea8.ctex"]
 
 [params]
 

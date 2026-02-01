@@ -1,0 +1,228 @@
+[gd_scene load_steps=10 format=3 uid="uid://c13s6w3uv4lfk"]
+
+[ext_resource type="Script" uid="uid://s7b7bcg787oi" path="res://scenes/end.gd" id="1_bvfni"]
+[ext_resource type="Texture2D" uid="uid://dnrrt4rbic42n" path="res://assets/grimreaper.png" id="2_s4tl2"]
+[ext_resource type="Texture2D" uid="uid://dv0emghha7x7i" path="res://assets/dialogue.png" id="3_8hmjt"]
+[ext_resource type="Theme" uid="uid://daxi17ckej5hs" path="res://main.tres" id="4_o5lv4"]
+[ext_resource type="Texture2D" uid="uid://b2ikv25el6dm7" path="res://assets/scorePopup.png" id="5_8hmjt"]
+[ext_resource type="Texture2D" uid="uid://b123p7rji75ru" path="res://assets/heaven.png" id="6_o5lv4"]
+
+[sub_resource type="Animation" id="Animation_gafq3"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pk062"]
+resource_name = "fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y6ged"]
+_data = {
+&"RESET": SubResource("Animation_gafq3"),
+&"fade": SubResource("Animation_pk062")
+}
+
+[node name="End" type="Node2D"]
+script = ExtResource("1_bvfni")
+
+[node name="background" type="ColorRect" parent="."]
+offset_right = 1024.0
+offset_bottom = 576.0
+color = Color(0, 0, 0, 1)
+
+[node name="grimreaper" type="TextureRect" parent="."]
+offset_left = 103.0
+offset_top = 20.0
+offset_right = 538.0
+offset_bottom = 455.0
+texture = ExtResource("2_s4tl2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="dialogueBox" type="TextureRect" parent="UI"]
+offset_left = 4.0
+offset_top = 388.0
+offset_right = 1020.0
+offset_bottom = 572.0
+texture = ExtResource("3_8hmjt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="dialogue" type="RichTextLabel" parent="UI/dialogueBox"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 20.0
+offset_right = 944.0
+offset_bottom = 164.0
+theme = ExtResource("4_o5lv4")
+theme_override_font_sizes/normal_font_size = 37
+text = "I will send you souls, and you have to decide whether to send them to heaven or hell based on their life."
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+vertical_alignment = 1
+
+[node name="overlay" type="ColorRect" parent="UI"]
+visible = false
+offset_right = 1024.0
+offset_bottom = 576.0
+color = Color(0, 0, 0, 0.6431373)
+
+[node name="popup" type="TextureRect" parent="UI"]
+visible = false
+offset_right = 1024.0
+offset_bottom = 576.0
+texture = ExtResource("5_8hmjt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/popup"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 90.0
+offset_right = 498.0
+offset_bottom = 244.0
+theme = ExtResource("4_o5lv4")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 70
+text = "RESULTS"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI/popup"]
+layout_mode = 0
+offset_left = 549.0
+offset_top = 90.0
+offset_right = 875.0
+offset_bottom = 245.0
+theme = ExtResource("4_o5lv4")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 70
+text = "RESULTS"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="UI/popup"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 220.0
+offset_right = 496.0
+offset_bottom = 375.0
+theme = ExtResource("4_o5lv4")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "Right:"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="UI/popup"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 350.0
+offset_right = 496.0
+offset_bottom = 505.0
+theme = ExtResource("4_o5lv4")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "Wrong:"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="UI/popup"]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 199.0
+offset_right = 904.0
+offset_bottom = 354.0
+theme = ExtResource("4_o5lv4")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "Accuracy:"
+
+[node name="right" type="RichTextLabel" parent="UI/popup"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 220.0
+offset_right = 598.0
+offset_bottom = 374.0
+theme = ExtResource("4_o5lv4")
+theme_override_colors/default_color = Color(0, 0.4509804, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "50"
+
+[node name="wrong" type="RichTextLabel" parent="UI/popup"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 350.0
+offset_right = 726.0
+offset_bottom = 505.0
+theme = ExtResource("4_o5lv4")
+theme_override_colors/default_color = Color(0.72156864, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "50"
+
+[node name="accuracy" type="RichTextLabel" parent="UI/popup"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 256.0
+offset_right = 805.0
+offset_bottom = 388.0
+theme = ExtResource("4_o5lv4")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "100%"
+horizontal_alignment = 1
+
+[node name="menu" type="TextureButton" parent="UI/popup"]
+layout_mode = 0
+offset_left = 559.0
+offset_top = 330.0
+offset_right = 838.0
+offset_bottom = 491.0
+texture_normal = ExtResource("6_o5lv4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/popup/menu"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 28.0
+offset_right = 217.0
+offset_bottom = 90.0
+mouse_filter = 1
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 22
+text = "Main
+Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fade" type="ColorRect" parent="UI"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1024.0
+offset_bottom = 576.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_y6ged")
+}
+
+[connection signal="pressed" from="UI/popup/menu" to="." method="_on_menu_pressed"]

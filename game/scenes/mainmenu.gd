@@ -4,6 +4,8 @@ extends Node2D
 @onready var anim_player = $AnimationPlayer
 
 func _ready():
+	anim_player.play_backwards("fade") 
+	await anim_player.animation_finished
 	start.pressed.connect(_on_start_pressed)
 	
 func _on_start_pressed():

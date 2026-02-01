@@ -1,9 +1,24 @@
 [gd_scene load_steps=8 format=3 uid="uid://c276ea4nvgxd6"]
 
 [ext_resource type="Script" uid="uid://cpcb06q33nfdp" path="res://scenes/opening.gd" id="1_pk062"]
-[ext_resource type="Texture2D" uid="uid://bsmnqsufo1gyd" path="res://assets/grimreaper.png" id="2_y6ged"]
-[ext_resource type="Texture2D" uid="uid://dv0emghha7x7i" path="res://dialogue.png" id="3_fvetl"]
+[ext_resource type="Texture2D" uid="uid://dnrrt4rbic42n" path="res://assets/grimreaper.png" id="2_y6ged"]
+[ext_resource type="Texture2D" uid="uid://dv0emghha7x7i" path="res://assets/dialogue.png" id="3_fvetl"]
 [ext_resource type="Theme" uid="uid://daxi17ckej5hs" path="res://main.tres" id="4_fvetl"]
+
+[sub_resource type="Animation" id="Animation_gafq3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_pk062"]
 resource_name = "fade"
@@ -21,21 +36,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_gafq3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("UI/fade:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y6ged"]
 _data = {
 &"RESET": SubResource("Animation_gafq3"),
@@ -51,10 +51,10 @@ offset_bottom = 576.0
 color = Color(0, 0, 0, 1)
 
 [node name="grimreaper" type="TextureRect" parent="."]
-offset_left = 330.0
-offset_top = 99.0
-offset_right = 600.0
-offset_bottom = 460.0
+offset_left = 103.0
+offset_top = 20.0
+offset_right = 538.0
+offset_bottom = 455.0
 texture = ExtResource("2_y6ged")
 expand_mode = 1
 stretch_mode = 5
@@ -73,18 +73,18 @@ stretch_mode = 5
 [node name="dialogue" type="RichTextLabel" parent="UI/dialogueBox"]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 26.0
-offset_right = 955.0
-offset_bottom = 157.0
+offset_top = 20.0
+offset_right = 944.0
+offset_bottom = 164.0
 theme = ExtResource("4_fvetl")
-theme_override_font_sizes/normal_font_size = 50
-text = "ghjuiytghjuiytgfvbjhuiytghfvbjhuiytgfvbnjhuyghbjh"
+theme_override_font_sizes/normal_font_size = 37
+text = "I will send you souls, and you have to decide whether to send them to heaven or hell based on their life."
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
+vertical_alignment = 1
 
 [node name="fade" type="ColorRect" parent="UI"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 offset_right = 1024.0
 offset_bottom = 576.0
