@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://d03hqljgnmu3m"]
+[gd_scene load_steps=45 format=3 uid="uid://d03hqljgnmu3m"]
 
 [ext_resource type="Script" uid="uid://dg3svefvmjyls" path="res://scenes/boardingpass.gd" id="1_yqv01"]
 [ext_resource type="Texture2D" uid="uid://53urjslnccgi" path="res://assets/clock/clock_hand12.png" id="2_q54tc"]
@@ -28,11 +28,13 @@
 [ext_resource type="SpriteFrames" uid="uid://b2kwnvr7hbijj" path="res://assets/spriteframes/male1.tres" id="18_eic6g"]
 [ext_resource type="Texture2D" uid="uid://b5la4odds8bui" path="res://assets/suitcase5.png" id="18_h04ti"]
 [ext_resource type="Texture2D" uid="uid://d02bxp4c0mp4u" path="res://assets/metaldetector.png" id="22_wlelf"]
+[ext_resource type="SpriteFrames" uid="uid://b1rc6wq70gtq5" path="res://assets/spriteframes/fire.tres" id="24_07a65"]
 [ext_resource type="Texture2D" uid="uid://bf77wuu6qjgm5" path="res://assets/boardingpass.png" id="24_de6ro"]
 [ext_resource type="Texture2D" uid="uid://dpxsoaoky1l57" path="res://assets/rulebook.png" id="24_h04ti"]
 [ext_resource type="Texture2D" uid="uid://ciej4t2yu5j8m" path="res://assets/passport.png" id="24_oycsi"]
 [ext_resource type="Texture2D" uid="uid://c1ytrewiygdkp" path="res://assets/passport_hover.png" id="25_de6ro"]
 [ext_resource type="Texture2D" uid="uid://cbca36c482tkt" path="res://assets/rulebook_hover.png" id="25_oycsi"]
+[ext_resource type="SpriteFrames" uid="uid://ci215i6a61dse" path="res://assets/spriteframes/light.tres" id="25_tgigr"]
 [ext_resource type="Texture2D" uid="uid://ulo52nuihhaf" path="res://assets/passportPopup_edit2.png" id="29_3l3r6"]
 [ext_resource type="Texture2D" uid="uid://cp5nktn8gfy4a" path="res://assets/rulebookpopup.png" id="29_ts1xl"]
 [ext_resource type="Texture2D" uid="uid://nx152mbsqmp" path="res://assets/hell.png" id="31_3l3r6"]
@@ -48,6 +50,7 @@ script = ExtResource("1_yqv01")
 clock_hands = Array[Texture2D]([ExtResource("2_q54tc"), ExtResource("3_q54tc"), ExtResource("4_6sm4p"), ExtResource("5_6oyea"), ExtResource("6_vwnb8"), ExtResource("7_oaegj"), ExtResource("8_m1tug"), ExtResource("9_xgqn8"), ExtResource("10_oq1vo"), ExtResource("11_56q75"), ExtResource("12_iywhv"), ExtResource("13_wlelf")])
 character_data = Array[SpriteFrames]([ExtResource("14_rg0cl"), ExtResource("15_pwxny"), ExtResource("16_07a65"), ExtResource("17_tgigr"), ExtResource("18_eic6g")])
 suitcases = Array[Texture2D]([ExtResource("14_oq1vo"), ExtResource("15_56q75"), ExtResource("16_iywhv"), ExtResource("17_wlelf"), ExtResource("18_h04ti")])
+effects_list = Array[SpriteFrames]([ExtResource("24_07a65"), ExtResource("25_tgigr")])
 
 [node name="background" type="TextureRect" parent="."]
 offset_right = 1024.0

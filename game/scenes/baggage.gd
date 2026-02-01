@@ -24,6 +24,7 @@ extends Node2D
 @onready var liquid = $scanner/liquid
 @onready var close = $overlay/close
 @onready var notif = $overlay/endPopup/notif
+@export var effects_list: Array[SpriteFrames] = []
 
 var scene_correct: int = 0
 var scene_incorrect: int = 0
@@ -76,7 +77,7 @@ func spawn_new_character():
 	human.sprite_frames = character_data.pick_random()
 	generate_passport_data()
 	generate_liquid_data()
-	human.position = Vector2(-300, 300)
+	human.position = Vector2(-150, 300)
 	human.play("walk")
 	passport.position = Vector2(-60, 450)
 	baggage.position = Vector2(-200, 67)
@@ -136,21 +137,28 @@ func _process_decision(sent_to_heaven: bool):
 	if (sent_to_heaven == is_actually_good):
 		scene_correct += 1
 		global.total_correct += 1
-		#effects.texture = light_tex
 	else:
 		scene_incorrect += 1
 		global.total_incorrect += 1
-		#effects.texture = fire_tex
 	
 	var tween = create_tween()
 	human.stop()
 	tween.tween_property(human, "position:x", 1200, 0.5)
 	tween.tween_property(passport, "position:x", 1200, 0.5)
 	tween.tween_property(baggage, "position:x", 1200, 0.5)
+	await tween.finished
 	effects.show()
 	
+	if not sent_to_heaven:
+		effects.sprite_frames = effects_list[0]
+		effects.play("fire")
+	else:
+		effects.sprite_frames = effects_list[1]
+		effects.play("light")
+		
 	await get_tree().create_timer(1.0).timeout
 	effects.hide()
+	await get_tree().create_timer(2.0).timeout
 	spawn_new_character()
 	
 func run_timer():

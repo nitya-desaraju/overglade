@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://ddyetqyxkhfn8"]
+[gd_scene load_steps=44 format=3 uid="uid://ddyetqyxkhfn8"]
 
 [ext_resource type="Script" uid="uid://rlhw5jwmqbyc" path="res://scenes/passport.gd" id="1_qnwf8"]
 [ext_resource type="Texture2D" uid="uid://dj4sfn2erodis" path="res://assets/clock/clock.png" id="2_vyb2i"]
@@ -29,8 +29,10 @@
 [ext_resource type="Texture2D" uid="uid://d02bxp4c0mp4u" path="res://assets/metaldetector.png" id="21_hk8k7"]
 [ext_resource type="Texture2D" uid="uid://dpxsoaoky1l57" path="res://assets/rulebook.png" id="23_lj442"]
 [ext_resource type="Texture2D" uid="uid://ciej4t2yu5j8m" path="res://assets/passport.png" id="23_tbjxl"]
+[ext_resource type="SpriteFrames" uid="uid://b1rc6wq70gtq5" path="res://assets/spriteframes/fire.tres" id="24_8t70e"]
 [ext_resource type="Texture2D" uid="uid://c1ytrewiygdkp" path="res://assets/passport_hover.png" id="24_bhw3d"]
 [ext_resource type="Texture2D" uid="uid://cbca36c482tkt" path="res://assets/rulebook_hover.png" id="24_tbjxl"]
+[ext_resource type="SpriteFrames" uid="uid://ci215i6a61dse" path="res://assets/spriteframes/light.tres" id="25_m855n"]
 [ext_resource type="Theme" uid="uid://daxi17ckej5hs" path="res://main.tres" id="28_iwvxt"]
 [ext_resource type="Texture2D" uid="uid://b123p7rji75ru" path="res://assets/heaven.png" id="29_m2qt2"]
 [ext_resource type="Texture2D" uid="uid://cp5nktn8gfy4a" path="res://assets/rulebookpopup.png" id="29_oruc5"]
@@ -47,10 +49,14 @@ script = ExtResource("1_qnwf8")
 clock_hands = Array[Texture2D]([ExtResource("3_r6ymf"), ExtResource("3_6lqes"), ExtResource("4_pludd"), ExtResource("5_r66ti"), ExtResource("6_pjesw"), ExtResource("7_2xayt"), ExtResource("8_75d8l"), ExtResource("9_fjnuf"), ExtResource("10_54mmm"), ExtResource("11_mr6io"), ExtResource("12_btdx1"), ExtResource("13_hk8k7"), ExtResource("3_r6ymf")])
 character_data = Array[SpriteFrames]([ExtResource("18_ymm13"), ExtResource("17_dot6e"), ExtResource("16_m855n"), ExtResource("15_8t70e"), ExtResource("14_athp0")])
 suitcases = Array[Texture2D]([ExtResource("14_54mmm"), ExtResource("15_mr6io"), ExtResource("16_btdx1"), ExtResource("17_hk8k7"), ExtResource("18_lj442")])
+effects_list = Array[SpriteFrames]([ExtResource("24_8t70e"), ExtResource("25_m855n")])
 
 [node name="background" type="TextureRect" parent="."]
+modulate = Color(0.3180198, 0.31801978, 0.31801975, 1)
 offset_right = 1024.0
 offset_bottom = 576.0
+expand_mode = 1
+stretch_mode = 4
 
 [node name="clock" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -388,3 +394,5 @@ stretch_mode = 5
 
 [node name="effects" type="AnimatedSprite2D" parent="."]
 visible = false
+position = Vector2(900, 288)
+scale = Vector2(8, 8)

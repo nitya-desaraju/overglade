@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b4totmfguulmf"]
+[gd_scene load_steps=44 format=3 uid="uid://b4totmfguulmf"]
 
 [ext_resource type="Script" uid="uid://dljwicw6fwsct" path="res://scenes/baggage.gd" id="1_xim4f"]
 [ext_resource type="Texture2D" uid="uid://53urjslnccgi" path="res://assets/clock/clock_hand12.png" id="2_1d7r8"]
@@ -30,6 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://d02bxp4c0mp4u" path="res://assets/metaldetector.png" id="22_johpt"]
 [ext_resource type="Texture2D" uid="uid://dpxsoaoky1l57" path="res://assets/rulebook.png" id="24_l7qmj"]
 [ext_resource type="Texture2D" uid="uid://ciej4t2yu5j8m" path="res://assets/passport.png" id="24_v27hl"]
+[ext_resource type="SpriteFrames" uid="uid://b1rc6wq70gtq5" path="res://assets/spriteframes/fire.tres" id="24_v40x2"]
+[ext_resource type="SpriteFrames" uid="uid://ci215i6a61dse" path="res://assets/spriteframes/light.tres" id="25_1j610"]
 [ext_resource type="Texture2D" uid="uid://c1ytrewiygdkp" path="res://assets/passport_hover.png" id="25_m4q7d"]
 [ext_resource type="Texture2D" uid="uid://cbca36c482tkt" path="res://assets/rulebook_hover.png" id="25_v27hl"]
 [ext_resource type="Texture2D" uid="uid://ulo52nuihhaf" path="res://assets/passportPopup_edit2.png" id="28_46g6y"]
@@ -47,6 +49,7 @@ script = ExtResource("1_xim4f")
 clock_hands = Array[Texture2D]([ExtResource("2_1d7r8"), ExtResource("3_1d7r8"), ExtResource("4_ygri5"), ExtResource("5_sl5mf"), ExtResource("6_jn1n6"), ExtResource("7_8olss"), ExtResource("8_o86gp"), ExtResource("9_sw25v"), ExtResource("10_j2xes"), ExtResource("11_5d583"), ExtResource("12_pdbry"), ExtResource("13_johpt")])
 character_data = Array[SpriteFrames]([ExtResource("14_07jkc"), ExtResource("15_gk7q2"), ExtResource("16_v40x2"), ExtResource("17_1j610"), ExtResource("18_xv1ec")])
 suitcases = Array[Texture2D]([ExtResource("14_j2xes"), ExtResource("15_5d583"), ExtResource("16_pdbry"), ExtResource("17_johpt"), ExtResource("18_l7qmj")])
+effects_list = Array[SpriteFrames]([ExtResource("24_v40x2"), ExtResource("25_1j610")])
 
 [node name="background" type="TextureRect" parent="."]
 offset_right = 1024.0
