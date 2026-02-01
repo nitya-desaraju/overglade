@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d03hqljgnmu3m"]
+[gd_scene load_steps=28 format=3 uid="uid://d03hqljgnmu3m"]
 
 [ext_resource type="Script" uid="uid://dg3svefvmjyls" path="res://scenes/boardingpass.gd" id="1_yqv01"]
 [ext_resource type="Texture2D" uid="uid://53urjslnccgi" path="res://assets/clock/clock_hand12.png" id="2_q54tc"]
@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://b5la4odds8bui" path="res://assets/suitcase5.png" id="18_h04ti"]
 [ext_resource type="Texture2D" uid="uid://d02bxp4c0mp4u" path="res://assets/metaldetector.png" id="22_wlelf"]
 [ext_resource type="Texture2D" uid="uid://dpxsoaoky1l57" path="res://assets/rulebook.png" id="24_h04ti"]
+[ext_resource type="Texture2D" uid="uid://ciej4t2yu5j8m" path="res://assets/passport.png" id="24_oycsi"]
+[ext_resource type="Texture2D" uid="uid://c1ytrewiygdkp" path="res://assets/passport_hover.png" id="25_de6ro"]
 [ext_resource type="Texture2D" uid="uid://cbca36c482tkt" path="res://assets/rulebook_hover.png" id="25_oycsi"]
 
 [node name="boardingpass" type="Node2D"]
@@ -87,10 +89,6 @@ texture = ExtResource("22_wlelf")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="passport" type="TextureButton" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="boardingpass" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
@@ -101,6 +99,16 @@ offset_right = 1024.0
 offset_bottom = 576.0
 texture = ExtResource("15_q54tc")
 expand_mode = 1
+stretch_mode = 5
+
+[node name="passport" type="TextureButton" parent="."]
+offset_left = -60.0
+offset_top = 415.0
+offset_right = -10.0
+offset_bottom = 482.0
+texture_normal = ExtResource("24_oycsi")
+texture_hover = ExtResource("25_de6ro")
+ignore_texture_size = true
 stretch_mode = 5
 
 [node name="rulebook" type="TextureButton" parent="."]
