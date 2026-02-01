@@ -128,12 +128,15 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="overlay" type="ColorRect" parent="."]
-visible = false
-offset_left = 434.0
-offset_top = 156.0
-offset_right = 474.0
-offset_bottom = 196.0
-color = Color(0.1254902, 0.1254902, 0.1254902, 0.70980394)
+offset_right = 1024.0
+offset_bottom = 576.0
+color = Color(0, 0, 0, 0.6745098)
+
+[node name="close" type="TextureButton" parent="overlay"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 576.0
 
 [node name="passportPopup" type="TextureRect" parent="overlay"]
 layout_mode = 0
@@ -144,15 +147,17 @@ offset_bottom = -32.0
 
 [node name="good" type="RichTextLabel" parent="overlay/passportPopup"]
 layout_mode = 0
-offset_top = 146.0
-offset_right = 40.0
-offset_bottom = 186.0
+offset_left = -97.0
+offset_top = 99.0
+offset_right = 30.0
+offset_bottom = 313.0
 
 [node name="bad" type="RichTextLabel" parent="overlay/passportPopup"]
 layout_mode = 0
-offset_top = 146.0
-offset_right = 40.0
-offset_bottom = 186.0
+offset_left = 220.0
+offset_top = 135.0
+offset_right = 370.0
+offset_bottom = 358.0
 
 [node name="rulebookPopup" type="TextureRect" parent="overlay"]
 layout_mode = 0
@@ -205,3 +210,5 @@ layout_mode = 2
 
 [node name="effects" type="AnimatedSprite2D" parent="."]
 visible = false
+
+[connection signal="pressed" from="overlay/close" to="." method="_on_background_clicked"]
